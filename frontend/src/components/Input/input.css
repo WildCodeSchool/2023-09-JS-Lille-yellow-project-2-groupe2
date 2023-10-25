@@ -12,6 +12,7 @@
   border: 1px solid black;
   box-shadow: 0 0 4px black;
 }
+
 .answer__input:focus {
   opacity: 1;
 }
@@ -25,6 +26,7 @@
   border: 1px solid black;
   box-shadow: 0 0 4px black;
 }
+
 .answer__button:focus {
   opacity: 1;
 }

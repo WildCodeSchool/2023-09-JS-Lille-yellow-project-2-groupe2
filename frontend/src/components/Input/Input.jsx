@@ -31,7 +31,7 @@ function Input({ movieTitle }) {
 
   return (
     <>
-      <div className="answer">
+      <section className="answer">
         <input
           className="answer__input"
           placeholder="Entre ta réponse ici"
@@ -43,7 +43,7 @@ function Input({ movieTitle }) {
         <button className="answer__button" type="button" onClick={handleClick}>
           OK
         </button>
-      </div>
+      </section>
       <p>{answerDisplay}</p>
     </>
   );
