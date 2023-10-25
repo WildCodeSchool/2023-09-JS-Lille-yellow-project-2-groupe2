@@ -1,0 +1,19 @@
+.poster__img {
+  filter: blur(60px);
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  animation-name: de-blur;
+  animation-duration: 40s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes de-blur {
+  from {
+    filter: blur(60px);
+  }
+  to {
+    filter: blur(15px);
+  }
+}
