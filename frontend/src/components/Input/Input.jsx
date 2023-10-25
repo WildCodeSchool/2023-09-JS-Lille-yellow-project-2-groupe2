@@ -18,6 +18,7 @@ function Input({ movieTitle }) {
       } else {
         setAnswerDisplay("Mauvaise réponse");
       }
+      setAnswer("");
     }
   }
 
@@ -35,6 +36,7 @@ function Input({ movieTitle }) {
           className="answer__input"
           placeholder="Entre ta réponse ici"
           type="text"
+          value={answer}
           onChange={(e) => handleChange(e)}
           onKeyDown={(e) => handleKeyDown(e)}
         />

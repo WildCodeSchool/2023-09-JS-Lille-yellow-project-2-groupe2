@@ -3,7 +3,7 @@ import Input from "./components/Input/Input";
 import "./App.css";
 
 function App() {
-  return <Input movieTitle="Interstellar" />;
+  return <Input movieTitle="Jurassic Park" />;
 }
 
 export default App;
