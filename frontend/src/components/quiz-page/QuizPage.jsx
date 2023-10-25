@@ -1,4 +1,3 @@
-import "./QuizPage.css";
 import Poster from "../poster/Poster";
 
 function QuizPage() {
