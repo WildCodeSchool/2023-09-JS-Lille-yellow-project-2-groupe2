@@ -1,7 +1,7 @@
 import React from "react";
 import "./Clues.css";
 
-function Indices() {
+function Clues() {
   return (
     <>
       <p className="Clues" id="Date-clue">
@@ -20,4 +20,4 @@ function Indices() {
   );
 }
 
-export default Indices;
+export default Clues;

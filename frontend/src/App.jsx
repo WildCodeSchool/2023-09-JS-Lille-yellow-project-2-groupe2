@@ -1,9 +1,9 @@
-import Indices from "./assets/components/Indices/Clues";
+import Clues from "./assets/components/Clues/Clues";
 
 import "./App.css";
 
 function App() {
-  <Indices />;
+  return <Clues />;
 }
 
 export default App;
