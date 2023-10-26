@@ -3,7 +3,7 @@
   font-family: knewave, sans-serif;
 }
 
-#Date-clue {
+.Date-clue {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;
