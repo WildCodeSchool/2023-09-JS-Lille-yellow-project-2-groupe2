@@ -1,32 +1,40 @@
+:root {
+  --dark: black;
+  --opacity-low: 0.5;
+  --opacity-normal: 1;
+}
+
 .answer {
   display: flex;
   justify-content: center;
 }
 
-.answer__input {
-  border-radius: 2rem;
-  text-align: center;
-  padding: 0.2rem;
-  opacity: 0.5;
-  margin-right: 0.5rem;
-  border: 1px solid black;
-  box-shadow: 0 0 4px black;
+.answer__label {
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
-.answer__input:focus {
-  opacity: 1;
+.answer__input,
+.answer__button {
+  border: 1px solid var(--dark);
+  box-shadow: 0 0 4px var(--dark);
+  opacity: var(--opacity-low);
+  text-align: center;
+  border-radius: 1.5rem;
+}
+
+.answer__input {
+  padding: 0.2rem;
+  margin-right: 0.5rem;
 }
 
 .answer__button {
   height: 2.5rem;
   width: 2.5rem;
-  text-align: center;
-  border-radius: 1.5rem;
-  opacity: 0.5;
-  border: 1px solid black;
-  box-shadow: 0 0 4px black;
 }
 
+.answer__input:focus,
 .answer__button:focus {
-  opacity: 1;
+  opacity: var(--opacity-normal);
 }

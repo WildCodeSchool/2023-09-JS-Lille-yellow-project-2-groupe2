@@ -32,6 +32,9 @@ function Input({ movieTitle }) {
   return (
     <>
       <section className="answer">
+        <label className="answer__label" htmlFor="answer">
+          Entre ta réponse ici
+        </label>
         <input
           className="answer__input"
           placeholder="Entre ta réponse ici"
@@ -39,6 +42,8 @@ function Input({ movieTitle }) {
           value={answer}
           onChange={(e) => handleChange(e)}
           onKeyDown={(e) => handleKeyDown(e)}
+          id="answer"
+          name="answer"
         />
         <button className="answer__button" type="button" onClick={handleClick}>
           OK
