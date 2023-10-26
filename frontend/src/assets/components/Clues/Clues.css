@@ -11,7 +11,7 @@
   animation-fill-mode: forwards;
 }
 
-#Producer-clue {
+.Producer-clue {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;
@@ -19,7 +19,7 @@
   animation-fill-mode: forwards;
 }
 
-#Genre-clue {
+.Genre-clue {
   opacity: 0;
 
   animation-name: fadeIn;
@@ -28,7 +28,7 @@
   animation-fill-mode: forwards;
 }
 
-#Casting-clue {
+.Casting-clue {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;
