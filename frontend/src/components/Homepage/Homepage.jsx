@@ -1,4 +1,4 @@
-import "./home.css";
+import "./Homepage.css";
 import logo from "../../assets/logo.png";
 
 function Home() {
@@ -8,7 +8,6 @@ function Home() {
         src={logo}
         className="logo-home"
         alt="logo jaune ciné wild quiz de la page d'accueil"
-        href="#"
       />
       ;<p className="slogan">Vous croyez tout connaître du Cinéma !</p>;
       <section className="btn-allButtons">
