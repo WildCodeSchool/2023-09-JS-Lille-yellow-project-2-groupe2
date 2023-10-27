@@ -7,6 +7,7 @@ function Input({ movieTitle }) {
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
 
+  // resets answerDisplay value after a second
   setTimeout(() => {
     if (!answerDisplay && answerDisplay !== "") {
       setAnswerDisplay("");
