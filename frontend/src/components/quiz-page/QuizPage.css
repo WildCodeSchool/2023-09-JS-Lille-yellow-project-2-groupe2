@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 59%,
+    #090979 81%,
+    rgba(0, 137, 255, 1) 100%
+  );
+}
+
+.quizpage_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
