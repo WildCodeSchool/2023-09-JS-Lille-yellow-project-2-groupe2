@@ -1,0 +1,20 @@
+.poster__img {
+  width: 80vw;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: blur(50px);
+  animation-name: unblur;
+  animation-duration: 40s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes unblur {
+  from {
+    filter: blur(50px);
+  }
+  to {
+    filter: blur(12px);
+  }
+}

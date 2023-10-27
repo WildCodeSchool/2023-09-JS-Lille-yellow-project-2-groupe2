@@ -1,0 +1,52 @@
+.Clues {
+  color: #f5bb47;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Date-clue {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-delay: 10s;
+  animation-fill-mode: forwards;
+}
+
+.Producer-clue {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-delay: 29s;
+  animation-fill-mode: forwards;
+}
+
+.Genre-clue {
+  opacity: 0;
+
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-delay: 18s;
+  animation-fill-mode: forwards;
+}
+
+.Casting-clue {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-delay: 25s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
