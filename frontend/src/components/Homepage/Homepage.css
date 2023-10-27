@@ -65,11 +65,52 @@ p {
 .slogan {
   text-align: center;
   font-size: 1.1rem;
-  margin-top: 0;
   padding-top: 0;
+  margin-bottom: 4rem;
 }
 
 img {
   width: auto;
-  height: 18rem;
+  height: 15rem;
+}
+
+@media screen and (min-width: 480px) {
+  img {
+    width: auto;
+    height: 33rem;
+  }
+
+  p {
+    font-family: Knewave, sans-serif;
+    color: white;
+    font-size: 150px;
+    padding: 1rem;
+  }
+
+  .homeButton {
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 27px;
+    border: 0.2rem solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: knewave, sans-serif;
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding: 0.7rem 10rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .slogan {
+    text-align: center;
+    font-size: 1.9rem;
+    padding-top: 0;
+    margin: 0.2rem;
+  }
 }
