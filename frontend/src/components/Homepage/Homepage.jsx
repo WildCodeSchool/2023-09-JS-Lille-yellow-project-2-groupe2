@@ -1,3 +1,4 @@
+import { Link, Outlet } from "react-router-dom";
 import "./Homepage.css";
 import logo from "../../assets/logo.png";
 
@@ -11,9 +12,9 @@ function Home() {
       />
       ;<p className="slogan">Vous croyez tout connaître du Cinéma !</p>;
       <section className="btn-allButtons">
-        <button type="button" className="homeButton">
+        <Link to="/quiz" className="homeButton">
           Jouer
-        </button>
+        </Link>
         <button type="button" className="homeButton">
           Classement
         </button>
@@ -21,6 +22,7 @@ function Home() {
           Casting
         </button>
       </section>
+      <Outlet />
     </section>
   );
 }
