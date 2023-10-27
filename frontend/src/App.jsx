@@ -1,7 +1,8 @@
-import Homepage from "./components/Homepage/Homepage";
+// import Homepage from "./components/Homepage/Homepage";
+import QuizPage from "./components/quiz-page/QuizPage";
 
 function App() {
-  return <Homepage />;
+  return <QuizPage />;
 }
 
 export default App;
