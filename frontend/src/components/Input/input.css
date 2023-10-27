@@ -7,6 +7,7 @@
 .answer {
   display: flex;
   justify-content: center;
+  margin-top: 0.5rem;
 }
 
 .answer__label {
@@ -21,17 +22,19 @@
   box-shadow: 0 0 4px var(--dark);
   opacity: var(--opacity-low);
   text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
   border-radius: 1.5rem;
 }
 
 .answer__input {
-  padding: 0.2rem;
-  margin-right: 0.5rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  width: 16rem;
 }
 
 .answer__button {
-  height: 2.5rem;
-  width: 2.5rem;
+  padding: 0.5rem;
 }
 
 .answer__input:focus,
