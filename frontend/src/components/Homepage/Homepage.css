@@ -73,3 +73,11 @@ img {
   width: auto;
   height: 18rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+}
