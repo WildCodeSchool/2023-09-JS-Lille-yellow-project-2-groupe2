@@ -15,12 +15,12 @@ function Home() {
         <Link to="/quiz" className="homeButton">
           Jouer
         </Link>
-        <button type="button" className="homeButton">
+        <Link to="/Ranking" className="homeButton">
           Classement
-        </button>
-        <button type="button" className="homeButton">
+        </Link>
+        <Link to="/Casting" className="homeButton">
           Casting
-        </button>
+        </Link>
       </section>
       <Outlet />
     </section>
