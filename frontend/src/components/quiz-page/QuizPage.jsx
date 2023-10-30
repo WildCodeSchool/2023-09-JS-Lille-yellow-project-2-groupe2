@@ -8,7 +8,7 @@ function QuizPage() {
     <section className="quizpage_container">
       <Poster />
       <Clues />
-      <Input />
+      <Input movieTitle="Jurassic Park" />
     </section>
   );
 }
