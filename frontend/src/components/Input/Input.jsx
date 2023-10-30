@@ -5,6 +5,14 @@ import PropTypes from "prop-types";
 function Input({ movieTitle }) {
   const [answer, setAnswer] = useState("");
   const [answerDisplay, setAnswerDisplay] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  // resets answerDisplay value after a second
+  setTimeout(() => {
+    if (!answerDisplay && answerDisplay !== "") {
+      setAnswerDisplay("");
+    }
+  }, 1000);
 
   // Updates the answer value with the input value
   function handleChange(e) {
@@ -14,9 +22,10 @@ function Input({ movieTitle }) {
   function handleClick() {
     if (answer !== "") {
       if (movieTitle.toLowerCase() === answer.toLowerCase()) {
-        setAnswerDisplay("Bonne réponse");
+        setAnswerDisplay(true);
+        setIsDisabled(true);
       } else {
-        setAnswerDisplay("Mauvaise réponse");
+        setAnswerDisplay(false);
       }
       setAnswer("");
     }
@@ -44,12 +53,35 @@ function Input({ movieTitle }) {
           onKeyDown={(e) => handleKeyDown(e)}
           id="answer"
           name="answer"
+          disabled={isDisabled}
         />
-        <button className="answer__button" type="button" onClick={handleClick}>
+        <button
+          className="answer__button"
+          type="button"
+          onClick={handleClick}
+          disabled={isDisabled}
+        >
           OK
         </button>
       </section>
-      <p>{answerDisplay}</p>
+      <p
+        className={
+          answerDisplay
+            ? "answer__display answer__display--success"
+            : "answer__display"
+        }
+      >
+        Bonne réponse
+      </p>
+      <p
+        className={
+          !answerDisplay && answerDisplay !== ""
+            ? "answer__display answer__display--fail"
+            : "answer__display"
+        }
+      >
+        Mauvaise réponse
+      </p>
     </>
   );
 }
