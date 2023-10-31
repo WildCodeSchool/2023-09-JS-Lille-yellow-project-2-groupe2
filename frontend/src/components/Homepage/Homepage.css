@@ -1,3 +1,12 @@
+:root {
+  --main-font: Knewave, sans-serif;
+  --button-color: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  --hover-button-color: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  --first-color: #0f133e;
+  --second-color: #f5bb47;
+  --third-color: white;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -49,6 +58,14 @@ body {
   top: 1px;
 }
 
+
+p {
+  font-family: var(--main-font);
+  color: var(--third-color);
+  font-size: 1rem;
+  padding: 1rem;
+}
+
 .btn-allButtons {
   display: flex;
   flex-direction: column;
@@ -58,8 +75,8 @@ body {
 .slogan {
   text-align: center;
   font-size: 1.1rem;
-  margin-top: 0;
   padding-top: 0;
+  margin-bottom: 4rem;
   font-family: var(--main-font);
   color: var(--third-color);
   font-size: 1rem;
@@ -68,7 +85,48 @@ body {
 
 img {
   width: auto;
-  height: 18rem;
+  height: 15rem;
+}
+
+@media screen and (min-width: 480px) {
+  img {
+    width: auto;
+    height: 33rem;
+  }
+
+  p {
+    font-family: var(--main-font);
+    color: var(--third-color);
+    font-size: 9.375rem;
+    padding: 1rem;
+  }
+
+  .homeButton {
+    background: var(--button-color);
+    background-color: #ffec64;
+    border-radius: 27px;
+    border: 0.2rem solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: var(--main-font);
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding: 0.7rem 10rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .slogan {
+    text-align: center;
+    font-size: 1.9rem;
+    padding-top: 0;
+    margin: 0.2rem;
+  }
 }
 
 a {
