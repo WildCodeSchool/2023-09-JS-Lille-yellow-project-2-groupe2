@@ -1,5 +1,4 @@
 .PopUpBackground {
-  background-color: #fff(200, 200, 200);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -11,7 +10,7 @@
 .PopUpContainer {
   width: 37.5rem;
   height: 18.75rem;
-  background-color: #0f133e;
+  background-color: var(--first-color);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
@@ -22,20 +21,20 @@
 }
 
 .PopUpText {
-  color: #f5bb47;
-  font-family: Knewave, sans-serif;
+  color: var(--second-color);
+  font-family: var(--main-font);
   font-size: 1.1rem;
 }
 
 .PopUpButton {
-  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-  background-color: #f5bb47;
+  background: var(--button-color);
+  background-color: var(--second-color);
   border-radius: 27px;
-  border: 0.2rem solid #f5bb47;
+  border: 0.2rem solid var(--second-color);
   display: inline-flex;
   cursor: pointer;
   color: #333333;
-  font-family: knewave, sans-serif;
+  font-family: var(--main-font);
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;

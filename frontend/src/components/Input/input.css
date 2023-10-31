@@ -1,9 +1,3 @@
-:root {
-  --dark: black;
-  --opacity-low: 0.5;
-  --opacity-normal: 1;
-}
-
 .answer {
   display: flex;
   justify-content: center;
