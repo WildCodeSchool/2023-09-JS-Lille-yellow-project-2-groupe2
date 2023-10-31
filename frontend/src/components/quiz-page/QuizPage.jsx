@@ -3,6 +3,7 @@ import Poster from "../poster/Poster";
 import Clues from "../Clues/Clues";
 import Input from "../Input/Input";
 import "./QuizPage.css";
+import TimerApp from "../TimerApp/TimerApp";
 
 function QuizPage() {
   return (
@@ -10,6 +11,7 @@ function QuizPage() {
       <Navbar />
       <Poster />
       <Clues />
+      <TimerApp />
       <Input movieTitle="Jurassic Park" />
     </section>
   );
