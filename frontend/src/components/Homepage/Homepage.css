@@ -20,40 +20,33 @@ body {
   width: 100vw;
 }
 .homeButton {
-  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background: var(--button-color);
   background-color: #ffec64;
   border-radius: 27px;
   border: 0.2rem solid #ffaa22;
-  display: inline-block;
+  display: inline-flex;
   cursor: pointer;
   color: #333333;
-  font-family: knewave, sans-serif;
+  font-family: var(--main-font);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1rem 1rem;
   text-decoration: none;
-  display: flex;
   flex-direction: column;
   margin: 0.5rem;
   width: 100%;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .homeButton:hover {
-  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  background: var(--hover-button-color);
   background-color: #ffab23;
 }
 
 .homeButton:active {
   position: relative;
   top: 1px;
-}
-
-p {
-  font-family: Knewave, sans-serif;
-  color: white;
-  font-size: 1rem;
-  padding: 1rem;
 }
 
 .btn-allButtons {
@@ -67,6 +60,10 @@ p {
   font-size: 1.1rem;
   margin-top: 0;
   padding-top: 0;
+  font-family: var(--main-font);
+  color: var(--third-color);
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 img {
@@ -76,4 +73,8 @@ img {
 
 a {
   text-decoration: none;
+}
+
+.OpenedPopUp {
+  background-color: rgba(0, 0, 0, 0.6);
 }
