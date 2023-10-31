@@ -13,7 +13,6 @@
   align-items: center;
   opacity: var(--opacity-normal);
   border-radius: 16px;
-  background-color: #ffec64;
   background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
   background-repeat: no-repeat;
   background-position: center;
