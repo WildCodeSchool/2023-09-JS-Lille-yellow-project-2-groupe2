@@ -5,7 +5,7 @@ import "./NamePopUp.css";
 
 function PopUp({ setOpeningPopUp }) {
   return (
-    <div className="PopUpBackground">
+    <main className="PopUpBackground">
       <section className="PopUpContainer">
         <p className="PopUpText">
           Le principe consiste à deviner quel film se cache derrière l' affiche.
@@ -13,7 +13,7 @@ function PopUp({ setOpeningPopUp }) {
           chrono. Bonne chance !
         </p>
         <input className="PopUpInput" placeholder="Entrez votre nom" />
-        <div className="PopUpAllButtons">
+        <section className="PopUpAllButtons">
           <button
             type="button"
             className="PopUpButton PopUpBackButton"
@@ -24,9 +24,9 @@ function PopUp({ setOpeningPopUp }) {
           <Link to="/quiz" className="PopUpButton PopUpContinueButton">
             Continuer
           </Link>
-        </div>
+        </section>
       </section>
-    </div>
+    </main>
   );
 }
 PopUp.propTypes = {
