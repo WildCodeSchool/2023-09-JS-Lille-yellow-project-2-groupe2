@@ -1,0 +1,28 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding: 0.2rem;
+  width: 90%;
+}
+
+.nav__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: var(--opacity-normal);
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav__button:hover {
+  opacity: var(--opacity-normal);
+}
+
+.nav img {
+  width: 2rem;
+  height: auto;
+}
