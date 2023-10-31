@@ -1,0 +1,19 @@
+.btn_TimerApp {
+  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background-color: #ffec64;
+  border-radius: 27px;
+  border: 0.2rem solid #ffaa22;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  width: 40%;
+  align-items: center;
+}
