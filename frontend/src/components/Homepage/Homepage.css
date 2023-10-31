@@ -1,3 +1,12 @@
+:root {
+  --main-font: Knewave, sans-serif;
+  --button-color: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  --hover-button-color: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  --first-color: #0f133e;
+  --second-color: #f5bb47;
+  --third-color: white;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -20,14 +29,14 @@ body {
   width: 100vw;
 }
 .homeButton {
-  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background: var(--button-color);
   background-color: #ffec64;
   border-radius: 27px;
   border: 0.2rem solid #ffaa22;
   display: inline-block;
   cursor: pointer;
   color: #333333;
-  font-family: knewave, sans-serif;
+  font-family: var(--main-font);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1rem 1rem;
@@ -40,7 +49,7 @@ body {
 }
 
 .homeButton:hover {
-  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  background: var(--hover-button-color);
   background-color: #ffab23;
 }
 
@@ -50,8 +59,8 @@ body {
 }
 
 p {
-  font-family: Knewave, sans-serif;
-  color: white;
+  font-family: var(--main-font);
+  color: var(--third-color);
   font-size: 1rem;
   padding: 1rem;
 }
@@ -81,21 +90,21 @@ img {
   }
 
   p {
-    font-family: Knewave, sans-serif;
-    color: white;
-    font-size: 150px;
+    font-family: var(--main-font);
+    color: var(--third-color);
+    font-size: 9.375rem;
     padding: 1rem;
   }
 
   .homeButton {
-    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background: var(--button-color);
     background-color: #ffec64;
     border-radius: 27px;
     border: 0.2rem solid #ffaa22;
     display: inline-block;
     cursor: pointer;
     color: #333333;
-    font-family: knewave, sans-serif;
+    font-family: var(--main-font);
     font-size: 2.4rem;
     font-weight: bold;
     padding: 0.7rem 10rem;
