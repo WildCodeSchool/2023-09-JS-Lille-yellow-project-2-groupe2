@@ -9,6 +9,7 @@ function Input({ movieTitle }) {
   const [score, setScore] = useState(0);
   const [startTime, setStartTime] = useState(null);
 
+  // initialize time-counter on first components load
   useEffect(() => {
     setStartTime(Date.now());
   }, []);
@@ -25,15 +26,17 @@ function Input({ movieTitle }) {
     setAnswer(e.target.value);
   }
 
-  // Checks if the answer is right or wrong and attribute points if right
+  // Checks if the answer is right or wrong
   function handleClick() {
     if (answer !== "") {
       if (movieTitle.toLowerCase() === answer.toLowerCase()) {
         setAnswerDisplay(true);
         setIsDisabled(true);
+        // calculate time response and time bonus
         const timeTaken = Date.now() - startTime;
         const maxScore = 20;
         const timeBonus = maxScore - Math.floor(timeTaken / 2000);
+        // attribute points if right + bonus points for quick answer
         setScore(score + 10 + timeBonus);
       } else {
         setAnswerDisplay(false);
