@@ -1,10 +1,16 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./Homepage.css";
+import PopUp from "../NamePopUp/NamePopUp";
 import logo from "../../assets/logo.png";
 
 function Home() {
+  const [openingPopUp, setOpeningPopUp] = useState(false);
+
   return (
-    <section className="all-elements-home">
+    <section
+      className={`all-elements-home ${openingPopUp ? "OpenedPopUp" : ""}`}
+    >
       <img
         src={logo}
         className="logo-home"
@@ -12,9 +18,14 @@ function Home() {
       />
       ;<p className="slogan">Vous croyez tout connaître du Cinéma !</p>;
       <section className="btn-allButtons">
-        <Link to="/quiz" className="homeButton">
+        <button
+          type="button"
+          className="homeButton"
+          onClick={() => setOpeningPopUp(true)}
+        >
           Jouer
-        </Link>
+        </button>
+        {openingPopUp && <PopUp setOpeningPopUp={setOpeningPopUp} />}
         <Link to="/Ranking" className="homeButton">
           Classement
         </Link>
@@ -22,7 +33,6 @@ function Home() {
           Casting
         </Link>
       </section>
-      <Outlet />
     </section>
   );
 }

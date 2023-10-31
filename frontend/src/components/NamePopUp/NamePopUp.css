@@ -1,0 +1,69 @@
+.PopUpBackground {
+  background-color: #fff(200, 200, 200);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 0vh;
+}
+
+.PopUpContainer {
+  width: 37.5rem;
+  height: 18.75rem;
+  background-color: #0f133e;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 12px;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+.PopUpText {
+  color: #f5bb47;
+  font-family: Knewave, sans-serif;
+  font-size: 1.1rem;
+}
+
+.PopUpButton {
+  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  background-color: #f5bb47;
+  border-radius: 27px;
+  border: 0.2rem solid #f5bb47;
+  display: inline-flex;
+  cursor: pointer;
+  color: #333333;
+  font-family: knewave, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  margin-top: 0.5rem;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+
+.PopUpBackButton {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.PopUpContinueButton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.PopUpInput {
+  font-weight: bold;
+  font-family: sans-serif;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.6rem;
+  font-size: 1.6rem;
+}
