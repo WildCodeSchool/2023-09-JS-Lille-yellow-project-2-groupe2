@@ -1,0 +1,22 @@
+:root {
+  --main-font: Knewave, sans-serif;
+  --button-color: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  --hover-button-color: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  --first-color: #0f133e;
+  --second-color: #f5bb47;
+  --third-color: white;
+  --dark: black;
+  --opacity-low: 0.5;
+  --opacity-normal: 1;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 59%,
+    rgba(9, 9, 121, 1) 81%,
+    rgba(0, 137, 255, 1) 100%
+  );
+}
