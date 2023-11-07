@@ -5,7 +5,9 @@
   --first-color: #0f133e;
   --second-color: #f5bb47;
   --third-color: white;
+  --light: white;
   --dark: black;
+  --opacity-none: 0;
   --opacity-low: 0.5;
   --opacity-normal: 1;
 }
@@ -19,4 +21,8 @@
     rgba(9, 9, 121, 1) 81%,
     rgba(0, 137, 255, 1) 100%
   );
+}
+
+* {
+  box-sizing: border-box;
 }
