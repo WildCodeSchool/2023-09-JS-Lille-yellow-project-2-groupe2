@@ -69,7 +69,7 @@
   animation: success 1s;
 }
 .answer__display--success {
-  opacity: 1;
+  animation: success 3s;
 }
 
 .answer__display:focus-visible {
