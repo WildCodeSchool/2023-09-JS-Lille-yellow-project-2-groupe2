@@ -7,19 +7,6 @@
   --third-color: white;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  background-size: cover;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 1) 59%,
-    rgba(9, 9, 121, 1) 81%,
-    rgba(0, 137, 255, 1) 100%
-  );
-}
-
 .all-elements-home {
   display: flex;
   flex-direction: column;
@@ -58,14 +45,6 @@ body {
   top: 1px;
 }
 
-
-p {
-  font-family: var(--main-font);
-  color: var(--third-color);
-  font-size: 1rem;
-  padding: 1rem;
-}
-
 .btn-allButtons {
   display: flex;
   flex-direction: column;
@@ -81,24 +60,21 @@ p {
   color: var(--third-color);
   font-size: 1rem;
   padding: 1rem;
+  text-align: center;
+  font-size: 1.9rem;
+  padding-top: 0;
+  margin: 0.2rem;
 }
 
-img {
+.logo-home {
   width: auto;
   height: 15rem;
 }
 
-@media screen and (min-width: 480px) {
-  img {
+@media screen and (max-width: 480px) {
+  .logo-home {
     width: auto;
     height: 33rem;
-  }
-
-  p {
-    font-family: var(--main-font);
-    color: var(--third-color);
-    font-size: 9.375rem;
-    padding: 1rem;
   }
 
   .homeButton {
@@ -120,13 +96,6 @@ img {
     width: 100%;
     align-items: center;
   }
-
-  .slogan {
-    text-align: center;
-    font-size: 1.9rem;
-    padding-top: 0;
-    margin: 0.2rem;
-  }
 }
 
 a {
@@ -134,5 +103,5 @@ a {
 }
 
 .OpenedPopUp {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }

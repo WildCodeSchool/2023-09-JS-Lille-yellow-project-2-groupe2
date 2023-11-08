@@ -1,8 +1,16 @@
 :root {
-  --main-font: Knewave, sans-serif;
+  --bold-font: bold;
   --button-color: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
   --hover-button-color: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
   --first-color: #0f133e;
   --second-color: #f5bb47;
-  --third-color: white;
+  --dark: black;
+  --light-color: white;
+  --opacity-none: 0;
+  --opacity-low: 0.5;
+  --opacity-normal: 1;
+}
+
+* {
+  box-sizing: border-box;
 }

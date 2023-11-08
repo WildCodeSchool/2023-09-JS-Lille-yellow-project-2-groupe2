@@ -1,11 +1,3 @@
-:root {
-  --dark: black;
-  --light: white;
-  --opacity-none: 0;
-  --opacity-low: 0.5;
-  --opacity-normal: 1;
-}
-
 @keyframes success {
   0% {
     opacity: var(--opacity-none);
