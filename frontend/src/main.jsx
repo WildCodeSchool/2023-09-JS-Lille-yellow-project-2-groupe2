@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
+import AboutUs from "./components/AboutUs/AboutUs";
 import QuizPage from "./components/quiz-page/QuizPage";
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/quiz",
     element: <QuizPage />,
+  },
+  {
+    path: "/casting",
+    element: <AboutUs />,
   },
 ]);
 
