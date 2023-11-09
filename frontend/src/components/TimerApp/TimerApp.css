@@ -1,0 +1,14 @@
+.btn_TimerApp {
+  background: var(--button-color);
+  border-radius: 50%;
+  border: var(--button-border);
+  color: var(button-text-color);
+  font-family: var(--second-font);
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

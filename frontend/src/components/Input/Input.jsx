@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./input.css";
 import PropTypes from "prop-types";
 
@@ -6,6 +6,13 @@ function Input({ movieTitle }) {
   const [answer, setAnswer] = useState("");
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
+  const [score, setScore] = useState(0);
+  const [startTime, setStartTime] = useState(null);
+
+  // initialize time-counter on first components load
+  useEffect(() => {
+    setStartTime(Date.now());
+  }, []);
 
   // resets answerDisplay value after a second
   setTimeout(() => {
@@ -18,12 +25,19 @@ function Input({ movieTitle }) {
   function handleChange(e) {
     setAnswer(e.target.value);
   }
+
   // Checks if the answer is right or wrong
   function handleClick() {
     if (answer !== "") {
       if (movieTitle.toLowerCase() === answer.toLowerCase()) {
         setAnswerDisplay(true);
         setIsDisabled(true);
+        // calculate time response and time bonus
+        const timeTaken = Date.now() - startTime;
+        const maxScore = 10;
+        const timeBonus = maxScore - Math.floor(timeTaken / 2000);
+        // attribute points if right + bonus points for quick answer
+        setScore(score + 10 + timeBonus);
       } else {
         setAnswerDisplay(false);
       }
@@ -71,7 +85,7 @@ function Input({ movieTitle }) {
             : "answer__display"
         }
       >
-        Bonne réponse
+        Bravo, + {score} points !
       </p>
       <p
         className={
@@ -80,7 +94,7 @@ function Input({ movieTitle }) {
             : "answer__display"
         }
       >
-        Mauvaise réponse
+        Raté, essaie encore !
       </p>
     </>
   );

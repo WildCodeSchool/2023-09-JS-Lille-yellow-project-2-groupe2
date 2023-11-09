@@ -16,7 +16,10 @@
 .answer {
   display: flex;
   justify-content: center;
-  margin-top: 0.5rem;
+  position: fixed;
+  bottom: 2rem;
+  gap: 4px;
+  width: 75%;
 }
 
 .answer__label {
@@ -27,33 +30,51 @@
 
 .answer__input,
 .answer__button {
-  border: 1px solid var(--dark);
-  box-shadow: 0 0 4px var(--dark);
+  border: var(--button-border);
   opacity: var(--opacity-low);
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 1.5rem;
 }
 
 .answer__input {
+  width: 100%;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.answer__button {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   padding: 0.5rem;
-  margin-right: 1rem;
-  width: 16rem;
+  padding-right: 0.8rem;
+  opacity: var(--opacity-normal);
+  background: var(--button-color);
+  color: var(--button-text-color);
+}
+
+.answer__button:hover {
+  background: var(--hover-button-color);
 }
 
 .answer__display {
   position: absolute;
-  top: 45%;
+  bottom: 40%;
   left: 50%;
   width: max-content;
+  background: var(--first-color);
+  border-radius: 30px;
+  border: var(--button-border);
   transform: translate(-50%, -50%);
-  font-family: Knewave, sans-serif;
-  color: #f5bb47;
-  font-size: 1rem;
-  padding: 1rem;
+  font-family: var(--main-font);
+  color: var(--second-color);
+  padding: 1rem 2rem 1rem 2rem;
   opacity: var(--opacity-none);
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-shadow: 0 0 2px var(--dark);
 }
 
@@ -66,10 +87,6 @@
 
 .answer__display:focus-visible {
   outline-offset: unset;
-}
-
-.answer__button {
-  padding: 0.5rem;
 }
 
 .answer__input:focus,
