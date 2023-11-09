@@ -4,65 +4,93 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 0vh;
+  height: auto;
 }
 
 .PopUpContainer {
-  width: 37.5rem;
-  height: 18.75rem;
+  width: 90vw;
+  max-width: 21.5rem;
+  min-width: 18rem;
+  height: auto;
   background-color: var(--first-color);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border-radius: 12px;
-  box-sizing: border-box;
   position: fixed;
+  bottom: 30%;
 }
 
 .PopUpText {
   color: var(--second-color);
-  font-family: var(--main-font);
+  font-family: var(--second-font);
   font-size: 1.1rem;
+  margin: 0;
 }
 
 .PopUpButton {
   background: var(--button-color);
-  background-color: var(--second-color);
   border-radius: 27px;
-  border: 0.2rem solid var(--second-color);
-  display: inline-flex;
+  border: var(--button-border);
   cursor: pointer;
-  color: #333333;
-  font-family: var(--main-font);
+  color: var(--button-text-color);
+  font-family: var(--second-font);
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
   margin-top: 0.5rem;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  flex-direction: row;
+  text-align: center;
+  width: 100%;
 }
 
+.PopUpButton:hover {
+  background: var(--hover-button-color);
+}
+
+.PopUpAllButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
 .PopUpBackButton {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  width: 50%;
 }
 .PopUpContinueButton {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: 50%;
 }
 
 .PopUpInput {
-  font-weight: bold;
-  font-family: sans-serif;
-  border-radius: 5px;
+  font-family: var(--second-font);
+  border-radius: 50px;
   margin-top: 1rem;
   margin-bottom: 0.7rem;
   line-height: 1.6rem;
-  font-size: 1.6rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 480px) {
+  .PopUpContainer {
+    max-width: 400px;
+  }
+
+  .PopUpButtons {
+    font-size: 2.4rem;
+  }
+
+  .PopUpText {
+    font-size: 1.4rem;
+  }
+
+  .PopUpInput {
+    font-size: 1.4rem;
+  }
 }

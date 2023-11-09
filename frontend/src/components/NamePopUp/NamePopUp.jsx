@@ -9,10 +9,10 @@ function PopUp({ setOpeningPopUp }) {
       <section className="PopUpContainer">
         <p className="PopUpText">
           Le principe consiste à deviner quel film se cache derrière l' affiche.
-          Ne t'en fais pas, des indices apparaissent au fur et à mesure du
+          Ne t'en fais pas, des indices apparaitront au fur et à mesure du
           chrono. Bonne chance !
         </p>
-        <input className="PopUpInput" placeholder="Entrez votre nom" />
+        <input className="PopUpInput" placeholder="Entre ton nom" />
         <section className="PopUpAllButtons">
           <button
             type="button"

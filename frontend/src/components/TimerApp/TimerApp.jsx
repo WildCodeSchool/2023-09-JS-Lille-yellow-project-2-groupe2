@@ -18,9 +18,7 @@ function TimerApp() {
     };
   }, [seconds]);
 
-  return (
-    <p className="btn_TimerApp">Il te reste plus que {seconds} secondes</p>
-  );
+  return <p className="btn_TimerApp">{seconds}s</p>;
 }
 
 export default TimerApp;

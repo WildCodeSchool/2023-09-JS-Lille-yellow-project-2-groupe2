@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
+import BackBtn from "../BackBtn/BackBtn";
+import TimerApp from "../TimerApp/TimerApp";
 import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="nav">
-      <NavLink to="/" className="nav__button">
-        <img src="./src/assets/back-arrow.svg" alt="Retour à l'accueil" />
-      </NavLink>
+    <nav className="navbar_container">
+      <BackBtn />
+      <TimerApp />
     </nav>
   );
 }
