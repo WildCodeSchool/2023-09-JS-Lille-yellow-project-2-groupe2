@@ -9,6 +9,7 @@
   --opacity-none: 0;
   --opacity-low: 0.5;
   --opacity-normal: 1;
+  --second-font: arial, helvetica, sans-serif;
 }
 
 * {

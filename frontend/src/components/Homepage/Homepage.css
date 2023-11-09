@@ -71,7 +71,7 @@
   height: 15rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .logo-home {
     width: auto;
     height: 33rem;
