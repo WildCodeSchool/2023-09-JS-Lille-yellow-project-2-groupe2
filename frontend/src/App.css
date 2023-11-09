@@ -1,5 +1,5 @@
 :root {
-  --main-font: Knewave, sans-serif;
+  --bold-font: bold;
   --second-font: arial, helvetica, sans-serif;
   --button-color: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
   --hover-button-color: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
@@ -18,7 +18,8 @@
     rgba(9, 9, 121, 1) 81%,
     rgba(0, 137, 255, 1) 100%
   );
-    
+}
+
 * {
   box-sizing: border-box;
 }
@@ -31,4 +32,3 @@ body {
 a {
   text-decoration: none;
 }
-
