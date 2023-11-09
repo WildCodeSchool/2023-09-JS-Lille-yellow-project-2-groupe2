@@ -1,6 +1,6 @@
 import "./RankingPage.css";
-import { NavLink } from "react-router-dom";
 import "../Navbar/Navbar.css";
+import BackBtn from "../BackBtn/BackBtn";
 
 function RankingPage() {
   const Ranking = [
@@ -47,11 +47,7 @@ function RankingPage() {
 
   return (
     <main className="ranking_body">
-      <nav className="nav">
-        <NavLink to="/" className="nav__button">
-          <img src="./src/assets/back-arrow.svg" alt="Retour à l'accueil" />
-        </NavLink>
-      </nav>
+      <BackBtn />
       <section className="all_ranking">
         <h1 className="ranking_title">Classement</h1>
         <table className="ranking_table responsive_ranking_table">
