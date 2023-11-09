@@ -18,8 +18,7 @@
     rgba(9, 9, 121, 1) 81%,
     rgba(0, 137, 255, 1) 100%
   );
-}
-
+    
 * {
   box-sizing: border-box;
 }
@@ -32,3 +31,4 @@ body {
 a {
   text-decoration: none;
 }
+
