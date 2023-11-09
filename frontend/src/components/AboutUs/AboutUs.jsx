@@ -37,7 +37,7 @@ function AboutUs() {
   return (
     <>
       <header className="header">
-        <Link to="/">
+        <Link className="header__logo" to="/">
           <img src="./src/assets/logo.png" alt="logo ciné wild quiz" />
         </Link>
       </header>

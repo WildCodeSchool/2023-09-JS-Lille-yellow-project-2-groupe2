@@ -6,7 +6,6 @@
   height: 100vh;
   width: 100vw;
 }
-
 .homeButton {
   background: var(--button-color);
   border-radius: 27px;
@@ -24,16 +23,13 @@
   width: 100%;
   align-items: center;
 }
-
 .homeButton:hover {
   background: var(--hover-button-color);
 }
-
 .homeButton:active {
   position: relative;
   top: 1px;
 }
-
 .btn-allButtons {
   display: flex;
   flex-direction: column;
@@ -42,7 +38,6 @@
   height: 40vh;
   width: auto;
 }
-
 .slogan {
   text-align: center;
   font-size: 1.1rem;
@@ -50,31 +45,25 @@
   color: var(--light-color);
   height: 10vh;
 }
-
 .logo-home {
   margin-top: 1rem;
   width: auto;
   height: 30vh;
 }
-
 .OpenedPopUp {
   background-color: rgba(0, 0, 0, 0.6);
 }
-
 @media screen and (min-width: 480px) {
   .logo-home {
-    .logo-home {
-      width: auto;
-      height: 40vh;
-    }
-
-    .homeButton {
-      font-size: 2.4rem;
-      padding: 0.7rem 10rem;
-      margin: 0.5rem;
-    }
-    .slogan {
-      font-size: 2rem;
-    }
+    width: auto;
+    height: 40vh;
+  }
+  .homeButton {
+    font-size: 2.4rem;
+    padding: 0.7rem 10rem;
+    margin: 0.5rem;
+  }
+  .slogan {
+    font-size: 2rem;
   }
 }
