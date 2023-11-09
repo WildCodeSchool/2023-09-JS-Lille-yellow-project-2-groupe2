@@ -1,4 +1,4 @@
-.Clues {
+.clues {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
   top: 3rem;
 }
 
-.Date-clue {
+.date-clue {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;
@@ -23,7 +23,7 @@
   animation-fill-mode: forwards;
 }
 
-.Producer-clue {
+.producer-clue {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;
@@ -31,7 +31,7 @@
   animation-fill-mode: forwards;
 }
 
-.Genre-clue {
+.genre-clue {
   opacity: 0;
 
   animation-name: fadeIn;
@@ -40,7 +40,7 @@
   animation-fill-mode: forwards;
 }
 
-.Casting-clue {
+.casting-clue {
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 4s;

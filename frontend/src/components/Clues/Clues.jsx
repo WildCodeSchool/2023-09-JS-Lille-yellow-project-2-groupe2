@@ -3,11 +3,11 @@ import "./Clues.css";
 
 function Clues() {
   return (
-    <section className="Clues">
-      <p className="Date-clue">1993</p>
-      <p className="Producer-clue">Steven Spielberg</p>
-      <p className="Genre-clue">Science-fiction / Aventure</p>
-      <p className="Casting-clue">Sam Neill / Laura Dern</p>
+    <section className="clues">
+      <p className="date-clue">1993</p>
+      <p className="producer-clue">Steven Spielberg</p>
+      <p className="genre-clue">Science-fiction / Aventure</p>
+      <p className="casting-clue">Sam Neill / Laura Dern</p>
     </section>
   );
 }

@@ -1,4 +1,4 @@
-.PopUpBackground {
+.popup__background {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   height: auto;
 }
 
-.PopUpContainer {
+.popup__container {
   width: 90vw;
   max-width: 21.5rem;
   min-width: 18rem;
@@ -22,14 +22,14 @@
   bottom: 30%;
 }
 
-.PopUpText {
+.popup__text {
   color: var(--second-color);
   font-family: var(--second-font);
   font-size: 1.1rem;
   margin: 0;
 }
 
-.PopUpButton {
+.popup__button {
   background: var(--button-color);
   border-radius: 27px;
   border: var(--button-border);
@@ -46,28 +46,28 @@
   width: 100%;
 }
 
-.PopUpButton:hover {
+.popup__button:hover {
   background: var(--hover-button-color);
 }
 
-.PopUpAllButtons {
+.popup__all_buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
 }
-.PopUpBackButton {
+.popup__back_button {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   width: 50%;
 }
-.PopUpContinueButton {
+.popup__continue_button {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   width: 50%;
 }
 
-.PopUpInput {
+.popup__input {
   font-family: var(--second-font);
   border-radius: 50px;
   margin-top: 1rem;
@@ -78,19 +78,19 @@
 }
 
 @media screen and (min-width: 480px) {
-  .PopUpContainer {
+  .popup__container {
     max-width: 400px;
   }
 
-  .PopUpButtons {
-    font-size: 2.4rem;
+  .popup__button {
+    font-size: 2rem;
   }
 
-  .PopUpText {
+  .popup__text {
     font-size: 1.4rem;
   }
 
-  .PopUpInput {
+  .popup__input {
     font-size: 1.4rem;
   }
 }
