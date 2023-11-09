@@ -63,16 +63,18 @@
 
 @media screen and (min-width: 480px) {
   .logo-home {
-    width: auto;
-    height: 40vh;
-  }
+    .logo-home {
+      width: auto;
+      height: 40vh;
+    }
 
-  .homeButton {
-    font-size: 2.4rem;
-    padding: 0.7rem 10rem;
-    margin: 0.5rem;
-  }
-  .slogan {
-    font-size: 2rem;
+    .homeButton {
+      font-size: 2.4rem;
+      padding: 0.7rem 10rem;
+      margin: 0.5rem;
+    }
+    .slogan {
+      font-size: 2rem;
+    }
   }
 }
