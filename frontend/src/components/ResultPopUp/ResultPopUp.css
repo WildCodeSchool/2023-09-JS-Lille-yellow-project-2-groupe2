@@ -56,12 +56,12 @@
 
 @media screen and (min-width: 480px) {
   .popUp {
-    width: 55%;
+    width: 60%;
   }
 }
 
 @media screen and (min-width: 768px) {
   .popUp {
-    max-width: 420px;
+    max-width: 30rem;
   }
 }
