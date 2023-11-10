@@ -1,0 +1,25 @@
+.back__button__container {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.back__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: var(--opacity-normal);
+  border: var(--button-border);
+  border-radius: 50%;
+  background: var(--button-color);
+  padding: 0.4rem;
+}
+
+.back__button:hover {
+  background: var(--hover-button-color);
+}
+
+.back__button img {
+  width: 2rem;
+  height: auto;
+}

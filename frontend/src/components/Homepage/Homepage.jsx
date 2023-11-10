@@ -17,7 +17,7 @@ function Home() {
           className="logo-home"
           alt="logo jaune ciné wild quiz de la page d'accueil"
         />
-        <p className="slogan">Vous croyez tout connaître du Cinéma !</p>
+        <p className="slogan">Prêt à tester tes connaissances Ciné ?</p>
         <section className="btn-allButtons">
           <button
             type="button"

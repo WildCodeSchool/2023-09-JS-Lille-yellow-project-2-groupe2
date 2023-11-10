@@ -1,68 +1,96 @@
-.PopUpBackground {
+.popup__background {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 0vh;
+  height: auto;
 }
 
-.PopUpContainer {
-  width: 37.5rem;
-  height: 18.75rem;
+.popup__container {
+  width: 90vw;
+  max-width: 21.5rem;
+  min-width: 18rem;
+  height: auto;
   background-color: var(--first-color);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border-radius: 12px;
-  box-sizing: border-box;
   position: fixed;
+  bottom: 30%;
 }
 
-.PopUpText {
+.popup__text {
   color: var(--second-color);
-  font-family: var(--main-font);
+  font-family: var(--second-font);
   font-size: 1.1rem;
+  margin: 0;
 }
 
-.PopUpButton {
+.popup__button {
   background: var(--button-color);
-  background-color: var(--second-color);
   border-radius: 27px;
-  border: 0.2rem solid var(--second-color);
-  display: inline-flex;
+  border: var(--button-border);
   cursor: pointer;
-  color: #333333;
-  font-family: var(--main-font);
+  color: var(--button-text-color);
+  font-family: var(--second-font);
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
   margin-top: 0.5rem;
-  width: 50%;
+  text-align: center;
+  width: 100%;
+}
+
+.popup__button:hover {
+  background: var(--hover-button-color);
+}
+
+.popup__all_buttons {
+  display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  flex-direction: row;
+  gap: 4px;
+}
+.popup__back_button {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  width: 50%;
+}
+.popup__continue_button {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: 50%;
 }
 
-.PopUpBackButton {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.PopUpContinueButton {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.PopUpInput {
-  font-weight: bold;
-  font-family: sans-serif;
-  border-radius: 5px;
+.popup__input {
+  font-family: var(--second-font);
+  border-radius: 50px;
   margin-top: 1rem;
   margin-bottom: 0.7rem;
   line-height: 1.6rem;
-  font-size: 1.6rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 480px) {
+  .popup__container {
+    max-width: 400px;
+  }
+
+  .popup__button {
+    font-size: 2rem;
+  }
+
+  .popup__text {
+    font-size: 1.4rem;
+  }
+
+  .popup__input {
+    font-size: 1.4rem;
+  }
 }

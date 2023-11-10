@@ -1,14 +1,12 @@
-import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import BackBtn from "../BackBtn/BackBtn";
 import TimerApp from "../TimerApp/TimerApp";
 import "./Navbar.css";
 
 function Navbar({ gameOver, setGameOver }) {
   return (
-    <nav className="nav">
-      <NavLink to="/" className="nav__button">
-        <img src="./src/assets/back-arrow.svg" alt="Retour à l'accueil" />
-      </NavLink>
+    <nav className="navbar_container">
+      <BackBtn />
       <TimerApp gameOver={gameOver} setGameOver={setGameOver} />
     </nav>
   );
