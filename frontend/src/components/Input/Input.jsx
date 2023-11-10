@@ -35,7 +35,7 @@ function Input({ movieTitle }) {
         // calculate time response and time bonus
         const timeTaken = Date.now() - startTime;
         const maxScore = 10;
-        const timeBonus = maxScore - Math.floor(timeTaken / 2000);
+        const timeBonus = maxScore - Math.floor(timeTaken / 4000);
         // attribute points if right + bonus points for quick answer
         setScore(score + 10 + timeBonus);
       } else {

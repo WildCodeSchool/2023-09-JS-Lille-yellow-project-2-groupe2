@@ -1,7 +1,6 @@
 .poster__img {
   width: 95vw;
   height: auto;
-  margin-top: 1rem;
   filter: blur(50px);
   animation-name: unblur;
   animation-duration: 40s;
@@ -10,7 +9,7 @@
   animation-timing-function: ease;
   z-index: -1;
   position: fixed;
-  top: 4rem;
+  top: 5rem;
 }
 
 @keyframes unblur {

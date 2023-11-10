@@ -10,7 +10,7 @@ function Home() {
   return (
     <main>
       <section
-        className={`all-elements-home ${openingPopUp ? "OpenedPopUp" : ""}`}
+        className={`all-elements-home ${openingPopUp ? ".opened_popup" : ""}`}
       >
         <img
           src={logo}
