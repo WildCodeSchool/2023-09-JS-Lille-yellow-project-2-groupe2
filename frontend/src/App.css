@@ -28,6 +28,8 @@
 body {
   margin: 0;
   background-image: var(--backG-color);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
