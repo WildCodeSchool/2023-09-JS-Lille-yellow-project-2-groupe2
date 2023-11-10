@@ -39,8 +39,8 @@ function Input({ movieTitle, gameOver, setGameOver, score, setScore }) {
         setIsDisabled(true);
         // calculate time response and time bonus
         const timeTaken = Date.now() - startTime;
-        const maxScore = 20;
-        const timeBonus = Math.max(maxScore - Math.floor(timeTaken / 2000), 0);
+        const maxScore = 10;
+        const timeBonus = maxScore - Math.floor(timeTaken / 4000);
         // attribute points if right + bonus points for quick answer
         setScore(score + 10 + timeBonus);
         // Changes game state if game is over
