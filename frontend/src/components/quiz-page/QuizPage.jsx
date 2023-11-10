@@ -18,6 +18,7 @@ function QuizPage() {
       <Clues />
       <Input
         movieTitle="Jurassic Park"
+        gameOver={gameOver}
         setGameOver={setGameOver}
         score={score}
         setScore={setScore}

@@ -6,13 +6,16 @@
   padding: 1rem;
   border-radius: 12px;
   position: absolute;
-  top: 60%;
+  top: 45%;
   width: 80%;
   align-items: center;
+  font-family: var(--second-font);
+  border: var(--button-border);
+  opacity: 0;
+  animation: 1s forwards 4s fadeIn;
 }
 
 .popUp__title {
-  font-family: var(--main-font);
   font-size: x-large;
   color: var(--second-color);
 }
@@ -24,6 +27,7 @@
 
 .popUp__buttons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   gap: 4px;
@@ -33,25 +37,48 @@
   background: var(--button-color);
   background-color: var(--second-color);
   border-radius: 27px;
-  border: 0.2rem solid var(--second-color);
+  border: var(--button-border);
   cursor: pointer;
-  color: #333333;
-  font-family: var(--main-font);
-  font-size: 1.5rem;
+  color: var(--button-text-color);
+  font-family: var(--second-font);
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 0.9rem 0.5rem;
-  width: 50%;
+  padding: 0.9rem 0;
+  width: 100%;
   text-align: center;
 }
 
 .popUp__button:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-top: 0.5rem;
 }
 
 .popUp__button:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.popUp__button:hover {
+  background: var(--hover-button-color);
+}
+
+@media screen and (min-width: 320px) {
+  .popUp__buttons {
+    flex-direction: row;
+    margin-top: 0.5rem;
+  }
+
+  .popUp__button:first-child {
+    border-bottom-left-radius: 27px;
+    border-top-right-radius: 4px;
+    margin-top: 0;
+  }
+
+  .popUp__button:last-child {
+    border-top-right-radius: 27px;
+    border-bottom-left-radius: 4px;
+  }
 }
 
 @media screen and (min-width: 480px) {
@@ -63,5 +90,9 @@
 @media screen and (min-width: 768px) {
   .popUp {
     max-width: 30rem;
+  }
+
+  .popUp__button {
+    font-size: 1.5rem;
   }
 }

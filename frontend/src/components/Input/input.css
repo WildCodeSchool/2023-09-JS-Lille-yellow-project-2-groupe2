@@ -82,7 +82,7 @@
   animation: success 1s;
 }
 .answer__display--success {
-  animation: success 3s;
+  animation: success 2s;
 }
 
 .answer__display:focus-visible {

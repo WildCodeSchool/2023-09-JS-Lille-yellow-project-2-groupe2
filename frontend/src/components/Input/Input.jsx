@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./input.css";
 import PropTypes from "prop-types";
 
-function Input({ movieTitle, setGameOver, score, setScore }) {
+function Input({ movieTitle, gameOver, setGameOver, score, setScore }) {
   const [answer, setAnswer] = useState("");
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
@@ -12,6 +12,12 @@ function Input({ movieTitle, setGameOver, score, setScore }) {
   useEffect(() => {
     setStartTime(Date.now());
   }, []);
+
+  useEffect(() => {
+    if (gameOver) {
+      setIsDisabled(true);
+    }
+  }, [gameOver]);
 
   // resets answerDisplay value after a second
   setTimeout(() => {
@@ -103,6 +109,7 @@ function Input({ movieTitle, setGameOver, score, setScore }) {
 
 Input.propTypes = {
   movieTitle: PropTypes.string.isRequired,
+  gameOver: PropTypes.bool.isRequired,
   setGameOver: PropTypes.func.isRequired,
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
