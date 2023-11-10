@@ -1,0 +1,33 @@
+.header {
+  text-align: center;
+}
+
+.header__logo img {
+  height: 35vh;
+  width: auto;
+}
+
+.teamCards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.footer__img {
+  height: auto;
+  width: 75%;
+  max-width: 480px;
+}
+
+@media screen and (min-width: 1406px) {
+  .teamCards {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}

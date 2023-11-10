@@ -1,16 +1,3 @@
-body {
-  display: flex;
-  justify-content: center;
-  background-size: cover;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 1) 59%,
-    rgba(9, 9, 121, 1) 81%,
-    rgba(0, 137, 255, 1) 100%
-  );
-}
-
 .all-elements-home {
   display: flex;
   flex-direction: column;
@@ -20,56 +7,63 @@ body {
   width: 100vw;
 }
 .homeButton {
-  background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-  background-color: #ffec64;
+  background: var(--button-color);
   border-radius: 27px;
-  border: 0.2rem solid #ffaa22;
-  display: inline-block;
+  border: var(--button-border);
+  display: inline-flex;
   cursor: pointer;
-  color: #333333;
-  font-family: knewave, sans-serif;
+  color: var(--button-text-color);
+  font-family: var(--second-font);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1rem 1rem;
   text-decoration: none;
-  display: flex;
   flex-direction: column;
   margin: 0.5rem;
   width: 100%;
   align-items: center;
 }
-
 .homeButton:hover {
-  background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-  background-color: #ffab23;
+  background: var(--hover-button-color);
 }
-
 .homeButton:active {
   position: relative;
   top: 1px;
 }
-
-p {
-  font-family: Knewave, sans-serif;
-  color: white;
-  font-size: 1rem;
-  padding: 1rem;
-}
-
 .btn-allButtons {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: auto;
 }
-
 .slogan {
   text-align: center;
   font-size: 1.1rem;
-  margin-top: 0;
-  padding-top: 0;
+  font-family: var(--main-font);
+  color: var(--light-color);
+  height: 10vh;
 }
-
-img {
+.logo-home {
+  margin-top: 1rem;
   width: auto;
-  height: 18rem;
+  height: 30vh;
+}
+.OpenedPopUp {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+@media screen and (min-width: 480px) {
+  .logo-home {
+    width: auto;
+    height: 40vh;
+  }
+  .homeButton {
+    font-size: 2.4rem;
+    padding: 0.7rem 10rem;
+    margin: 0.5rem;
+  }
+  .slogan {
+    font-size: 2rem;
+  }
 }

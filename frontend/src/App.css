@@ -1,0 +1,35 @@
+:root {
+  --bold-font: bold;
+  --main-font: Knewave, sans-serif;
+  --second-font: arial, helvetica, sans-serif;
+  --button-color: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+  --hover-button-color: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+  --button-border: 0.2rem solid #ffaa22;
+  --button-text-color: #333333;
+  --first-color: #0f133e;
+  --second-color: #f5bb47;
+  --light-color: white;
+  --dark: black;
+  --opacity-none: 0;
+  --opacity-low: 0.6;
+  --opacity-normal: 1;
+  --backG-color: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 59%,
+    rgba(9, 9, 121, 1) 81%,
+    rgba(0, 137, 255, 1) 100%
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: var(--backG-color);
+}
+
+a {
+  text-decoration: none;
+}

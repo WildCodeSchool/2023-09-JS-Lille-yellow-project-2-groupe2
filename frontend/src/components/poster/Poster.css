@@ -1,13 +1,16 @@
 .poster__img {
-  width: 80vw;
+  width: 95vw;
   height: auto;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   filter: blur(50px);
   animation-name: unblur;
   animation-duration: 40s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
+  z-index: -1;
+  position: fixed;
+  top: 4rem;
 }
 
 @keyframes unblur {
@@ -17,4 +20,9 @@
   to {
     filter: blur(12px);
   }
+}
+
+.poster__img--reveal {
+  filter: unset;
+  animation-name: unset;
 }
