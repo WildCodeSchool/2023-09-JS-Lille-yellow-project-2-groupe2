@@ -3,8 +3,15 @@
 }
 
 .header__logo img {
-  height: 35vh;
+  height: 28vh;
   width: auto;
+  margin-top: 3rem;
+}
+
+.back__button--about_us {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
 }
 
 .teamCards {

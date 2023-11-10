@@ -47,7 +47,9 @@ function RankingPage() {
 
   return (
     <main className="ranking_body">
-      <BackBtn />
+      <nav className="back__button--ranking">
+        <BackBtn />
+      </nav>
       <section className="all_ranking">
         <h1 className="ranking_title">Classement</h1>
         <table className="ranking_table responsive_ranking_table">

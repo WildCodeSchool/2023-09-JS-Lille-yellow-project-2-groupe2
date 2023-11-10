@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import TeamCard from "../TeamCard/TeamCard";
+import BackBtn from "../BackBtn/BackBtn";
 import "./AboutUs.css";
 
 function AboutUs() {
@@ -41,6 +42,9 @@ function AboutUs() {
           <img src="./src/assets/logo.png" alt="logo ciné wild quiz" />
         </Link>
       </header>
+      <nav className="back__button--about_us">
+        <BackBtn />
+      </nav>
       <main className="container">
         <section className="teamCards">
           {team.map((member) => (
