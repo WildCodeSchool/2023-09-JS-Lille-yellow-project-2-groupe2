@@ -2,22 +2,35 @@ import { useState, useEffect } from "react";
 import "./input.css";
 import PropTypes from "prop-types";
 
-function Input({ movieTitle, gameOver, setGameOver, score, setScore }) {
+function Input({
+  movieTitle,
+  setGameOver,
+  score,
+  setScore,
+  questionIndex,
+  questionOver,
+  setQuestionOver,
+}) {
   const [answer, setAnswer] = useState("");
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [startTime, setStartTime] = useState(null);
 
-  // initialize time-counter on first components load
   useEffect(() => {
+    // initialize time-counter
     setStartTime(Date.now());
-  }, []);
+    // Resets input field state on question change
+    setIsDisabled(false);
+    // Resets answerDisplay value on question change
+    setAnswerDisplay("");
+  }, [questionIndex]);
 
+  // Disables input field when question is over due to timeout
   useEffect(() => {
-    if (gameOver) {
+    if (questionOver) {
       setIsDisabled(true);
     }
-  }, [gameOver]);
+  }, [questionOver]);
 
   // resets answerDisplay value after a second
   setTimeout(() => {
@@ -44,7 +57,10 @@ function Input({ movieTitle, gameOver, setGameOver, score, setScore }) {
         // attribute points if right + bonus points for quick answer
         setScore(score + 10 + timeBonus);
         // Changes game state if game is over
-        setGameOver(true);
+        if (questionIndex === 10) {
+          setGameOver(true);
+        }
+        setQuestionOver(true);
       } else {
         setAnswerDisplay(false);
       }
@@ -109,10 +125,12 @@ function Input({ movieTitle, gameOver, setGameOver, score, setScore }) {
 
 Input.propTypes = {
   movieTitle: PropTypes.string.isRequired,
-  gameOver: PropTypes.bool.isRequired,
   setGameOver: PropTypes.func.isRequired,
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
+  questionIndex: PropTypes.number.isRequired,
+  questionOver: PropTypes.bool.isRequired,
+  setQuestionOver: PropTypes.func.isRequired,
 };
 
 export default Input;
