@@ -25,11 +25,14 @@ function ResultPopUp({ score, questionIndex, setQuestionIndex, questionOver }) {
             </button>
           ) : (
             <>
-              <Link className="popUp__button popUp__button--first-child" to="/">
+              <Link
+                className="popUp__button popUp__button--border-radius-right"
+                to="/"
+              >
                 Menu
               </Link>
               <Link
-                className="popUp__button popUp__button--last-child"
+                className="popUp__button popUp__button--border-radius-left"
                 to="/ranking"
               >
                 Classement
