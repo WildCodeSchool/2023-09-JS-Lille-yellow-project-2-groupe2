@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: space-evenly;
   height: 70vh;
   position: fixed;
@@ -13,6 +14,14 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   top: 3rem;
+}
+
+.clue {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .date-clue {
@@ -57,6 +66,18 @@
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
 .clues--hide {
-  opacity: var(--opacity-none);
+  animation-name: fadeOut;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
 }

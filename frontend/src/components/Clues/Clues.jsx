@@ -4,10 +4,10 @@ import "./Clues.css";
 function Clues() {
   return (
     <section className="clues">
-      <p className="date-clue">1993</p>
-      <p className="producer-clue">Steven Spielberg</p>
-      <p className="genre-clue">Science-fiction / Aventure</p>
-      <p className="casting-clue">Sam Neill / Laura Dern</p>
+      <p className="clue date-clue">1993</p>
+      <p className="clue producer-clue">Steven Spielberg</p>
+      <p className="clue genre-clue">Science-fiction / Aventure</p>
+      <p className="clue casting-clue">Sam Neill / Laura Dern</p>
     </section>
   );
 }

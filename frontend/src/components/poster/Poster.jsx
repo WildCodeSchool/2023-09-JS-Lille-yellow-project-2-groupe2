@@ -6,7 +6,7 @@ function Poster({ poster }) {
   const imageUrl = "https://image.tmdb.org/t/p/original";
   return (
     <img
-      className="poster__img"
+      className="poster__img poster poster"
       src={`${imageUrl}${poster}`}
       alt=""
       draggable="false"
