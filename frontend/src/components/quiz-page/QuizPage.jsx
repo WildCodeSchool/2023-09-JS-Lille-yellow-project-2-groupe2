@@ -103,7 +103,7 @@ function QuizPage() {
           questionOver={questionOver}
           setQuestionOver={setQuestionOver}
         />
-        <Poster poster={movie.poster_path} />
+        <Poster poster={movie.poster_path} questionOver={questionOver} />
         <Clues
           movieDate={movie.release_date}
           movieDirector={movieDirector && movieDirector[0].name}
@@ -111,6 +111,7 @@ function QuizPage() {
             movieGenres && `${movieGenres[0].name} / ${movieGenres[1].name}`
           }
           movieCast={movieCast && `${movieCast[0]} / ${movieCast[1]}`}
+          questionOver={questionOver}
         />
         <Input
           movieTitle={movie.title}

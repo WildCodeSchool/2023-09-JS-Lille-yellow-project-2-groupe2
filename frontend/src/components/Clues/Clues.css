@@ -16,7 +16,7 @@
 }
 
 .date-clue {
-  opacity: 0;
+  opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
   animation-delay: 10s;
@@ -24,7 +24,7 @@
 }
 
 .producer-clue {
-  opacity: 0;
+  opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
   animation-delay: 29s;
@@ -32,8 +32,7 @@
 }
 
 .genre-clue {
-  opacity: 0;
-
+  opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
   animation-delay: 18s;
@@ -41,7 +40,7 @@
 }
 
 .casting-clue {
-  opacity: 0;
+  opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
   animation-delay: 25s;
@@ -50,13 +49,20 @@
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: var(--opacity-none);
   }
   to {
-    opacity: 100%;
+    opacity: var(--opacity-normal);
   }
 }
 
 .clues--hide {
   opacity: var(--opacity-none);
+}
+
+.clues-reveal {
+  opacity: var(--opacity-none);
+  animation-name: fadeIn;
+  animation-duration: 0;
+  animation-fill-mode: forwards;
 }
