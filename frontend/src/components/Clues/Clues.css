@@ -55,11 +55,6 @@
     opacity: var(--opacity-normal);
   }
 }
-
-.clues--hide {
-  opacity: var(--opacity-none);
-}
-
 .clues-reveal {
   opacity: var(--opacity-none);
   animation-name: fadeIn;
