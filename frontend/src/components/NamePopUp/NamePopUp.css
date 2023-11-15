@@ -78,7 +78,7 @@
   font-size: 1.1rem;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 580px) {
   .popup__container {
     max-width: 400px;
   }
