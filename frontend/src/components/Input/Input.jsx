@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import "./input.css";
 import PropTypes from "prop-types";
+import levenshtein from "js-levenshtein";
+import "./input.css";
 
 function Input({
   movieTitle,
@@ -44,10 +45,38 @@ function Input({
     setAnswer(event.target.value);
   };
 
+  function compare(expected, input) {
+    // Removes accents and special characters
+    const title = expected
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/([^\w]+|\s+)/g, "");
+    const userInput = input
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/([^\w]+|\s+)/g, "");
+    const max = Math.max(title.length, userInput.length);
+    let percent;
+    // Sets error percentage depending on title length
+    if (title.length > 40) {
+      percent = 0.75;
+    } else if (title.length > 30) {
+      percent = 0.7;
+    } else if (title.length > 20) {
+      percent = 0.55;
+    } else {
+      percent = title.length / 65;
+    }
+    if (levenshtein(title, userInput) / max <= percent) {
+      return true;
+    }
+    return false;
+  }
+
   // Checks if the answer is right or wrong
   const handleClick = () => {
     if (answer !== "") {
-      if (movieTitle.toLowerCase() === answer.toLowerCase()) {
+      if (compare(movieTitle.toLowerCase(), answer.toLowerCase())) {
         setAnswerDisplay(true);
         setIsDisabled(true);
         // calculate time response and time bonus
