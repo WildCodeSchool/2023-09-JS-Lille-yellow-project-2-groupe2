@@ -16,6 +16,7 @@ function Input({
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [startTime, setStartTime] = useState(null);
+  const [questionScore, setQuestionScore] = useState();
 
   useEffect(() => {
     // initialize time-counter
@@ -84,6 +85,7 @@ function Input({
         const maxScore = 10;
         const timeBonus = maxScore - Math.floor(timeTaken / 4000);
         // attribute points if right + bonus points for quick answer
+        setQuestionScore(10 + timeBonus);
         setScore(score + 10 + timeBonus);
         // Changes game state if game is over
         if (questionIndex === 10) {
@@ -137,7 +139,7 @@ function Input({
             : "answer__display"
         }
       >
-        Bravo, + {score} points !
+        Bravo, + {questionScore} points !
       </p>
       <p
         className={
