@@ -17,26 +17,28 @@ function QuizPage() {
   // User score
   const [score, setScore] = useState(0);
   const [movie, setMovie] = useState(null);
-  const [movieCast, setMovieCast] = useState([]);
-  const [movieDirector, setMovieDirector] = useState();
-  const [movieGenres, setMovieGenres] = useState();
+  const [movieCast, setMovieCast] = useState(null);
+  const [movieDirector, setMovieDirector] = useState(null);
+  const [movieGenres, setMovieGenres] = useState(null);
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTAzZGExODJkODUyNWQ2YzBiYTZlNzNiY2Q1YjA4MSIsInN1YiI6IjY1NGI1NWQ2NDFhNTYxMzM2ZDg2NjA3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3C9MzFQ-cGmIQFXHUAvhGaJRqQXR3suZ9u-aApF70R8",
+    },
+  };
 
   function getGenre(genreList, movieGenre) {
     const genres = genreList.filter((genre) => movieGenre.includes(genre.id));
-    return genres;
+    return genres.length > 1
+      ? `${genres[0].name} / ${genres[1].name}`
+      : genres[0].name;
   }
 
   useEffect(() => {
-    const randomMovie = Math.floor(Math.random() * 19);
-    const randomPage = Math.floor(Math.random() * 39) + 1;
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTAzZGExODJkODUyNWQ2YzBiYTZlNzNiY2Q1YjA4MSIsInN1YiI6IjY1NGI1NWQ2NDFhNTYxMzM2ZDg2NjA3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3C9MzFQ-cGmIQFXHUAvhGaJRqQXR3suZ9u-aApF70R8",
-      },
-    };
+    const randomMovie = Math.floor(Math.random() * 20);
+    const randomPage = Math.floor(Math.random() * 40) + 1;
 
     fetch(
       `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=fr-FR&page=${randomPage}&sort_by=popularity.desc&vote_count.gte=5000`,
@@ -51,14 +53,6 @@ function QuizPage() {
 
   useEffect(() => {
     if (movie) {
-      const options = {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTAzZGExODJkODUyNWQ2YzBiYTZlNzNiY2Q1YjA4MSIsInN1YiI6IjY1NGI1NWQ2NDFhNTYxMzM2ZDg2NjA3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3C9MzFQ-cGmIQFXHUAvhGaJRqQXR3suZ9u-aApF70R8",
-        },
-      };
       fetch(
         `https://api.themoviedb.org/3/movie/${movie.id}/credits?language=en-US`,
         options
@@ -104,14 +98,14 @@ function QuizPage() {
           setQuestionOver={setQuestionOver}
         />
         <Poster poster={movie.poster_path} />
-        <Clues
-          movieDate={movie.release_date}
-          movieDirector={movieDirector && movieDirector[0].name}
-          movieGenres={
-            movieGenres && `${movieGenres[0].name} / ${movieGenres[1].name}`
-          }
-          movieCast={movieCast && `${movieCast[0]} / ${movieCast[1]}`}
-        />
+        {movieDirector && movieGenres && movieCast && (
+          <Clues
+            movieDate={movie.release_date}
+            movieDirector={movieDirector[0].name}
+            movieGenres={movieGenres}
+            movieCast={`${movieCast[0]} / ${movieCast[1]}`}
+          />
+        )}
         <Input
           movieTitle={movie.title}
           setGameOver={setGameOver}
