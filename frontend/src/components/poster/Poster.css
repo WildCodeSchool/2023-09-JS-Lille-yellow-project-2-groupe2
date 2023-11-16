@@ -21,7 +21,19 @@
   }
 }
 
+@keyframes reveal {
+  from {
+    filter: blur(12px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
 .poster__img--reveal {
-  filter: unset;
-  animation-name: unset;
+  animation-name: reveal;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }

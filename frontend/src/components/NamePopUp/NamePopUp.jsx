@@ -30,7 +30,7 @@ function PopUp({ setOpeningPopUp }) {
   );
 }
 PopUp.propTypes = {
-  setOpeningPopUp: PropTypes.bool.isRequired,
+  setOpeningPopUp: PropTypes.func.isRequired,
 };
 
 export default PopUp;
