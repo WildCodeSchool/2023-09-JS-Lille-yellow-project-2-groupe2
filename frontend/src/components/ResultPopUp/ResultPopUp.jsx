@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import useName from "../GameContext";
 import "./ResultPopUp.css";
 
-function ResultPopUp({ score, questionIndex, setQuestionIndex, questionOver }) {
+function ResultPopUp({ questionIndex, setQuestionIndex, questionOver }) {
+  const { score } = useName();
   const handleClick = () => {
     setQuestionIndex(questionIndex + 1);
   };
@@ -46,7 +48,6 @@ function ResultPopUp({ score, questionIndex, setQuestionIndex, questionOver }) {
 }
 
 ResultPopUp.propTypes = {
-  score: PropTypes.number.isRequired,
   questionIndex: PropTypes.number.isRequired,
   setQuestionIndex: PropTypes.func.isRequired,
   questionOver: PropTypes.bool.isRequired,

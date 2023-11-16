@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import "./input.css";
 import PropTypes from "prop-types";
+import useName from "../GameContext";
+import "./input.css";
 
 function Input({
   movieTitle,
   setGameOver,
-  score,
-  setScore,
   questionIndex,
   questionOver,
   setQuestionOver,
@@ -15,6 +14,7 @@ function Input({
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [startTime, setStartTime] = useState(null);
+  const { score, setScore } = useName();
 
   useEffect(() => {
     // initialize time-counter
@@ -126,8 +126,6 @@ function Input({
 Input.propTypes = {
   movieTitle: PropTypes.string.isRequired,
   setGameOver: PropTypes.func.isRequired,
-  score: PropTypes.number.isRequired,
-  setScore: PropTypes.func.isRequired,
   questionIndex: PropTypes.number.isRequired,
   questionOver: PropTypes.bool.isRequired,
   setQuestionOver: PropTypes.func.isRequired,
