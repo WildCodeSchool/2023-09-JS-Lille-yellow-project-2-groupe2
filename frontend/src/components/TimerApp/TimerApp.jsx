@@ -33,6 +33,9 @@ function TimerApp({
     };
   }, [seconds]);
 
+  useEffect(() => {
+    setSeconds(40);
+  }, [questionIndex]);
   return <p className="btn_TimerApp">{seconds}s</p>;
 }
 

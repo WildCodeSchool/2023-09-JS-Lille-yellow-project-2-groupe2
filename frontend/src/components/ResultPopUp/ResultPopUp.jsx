@@ -13,7 +13,7 @@ function ResultPopUp({ questionIndex, setQuestionIndex, questionOver }) {
     questionOver && (
       <section className="popUp">
         <h2 className="popUp__title">
-          {questionIndex < 10 ? `Film ${questionIndex}/10` : `Fin de partie`}
+          {questionIndex < 10 ? `Film ${questionIndex} / 10` : `Fin de partie`}
         </h2>
         <p className="popUp__paragraph">Votre score est : {score} points</p>
         <nav className="popUp__buttons">

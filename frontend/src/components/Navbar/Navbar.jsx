@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import BackBtn from "../BackBtn/BackBtn";
 import TimerApp from "../TimerApp/TimerApp";
+import QuizProgression from "../QuizProgression/QuizProgression";
 import "./Navbar.css";
 
 function Navbar({
@@ -13,6 +14,7 @@ function Navbar({
   return (
     <nav className="navbar_container">
       <BackBtn />
+      <QuizProgression questionIndex={questionIndex} />
       <TimerApp
         gameOver={gameOver}
         setGameOver={setGameOver}

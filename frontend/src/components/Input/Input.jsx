@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import useName from "../GameContext";
+import levenshtein from "js-levenshtein";
 import "./input.css";
 
 function Input({
   movieTitle,
+  movieOriginalTitle,
   setGameOver,
   questionIndex,
   questionOver,
@@ -15,6 +17,8 @@ function Input({
   const [isDisabled, setIsDisabled] = useState(false);
   const [startTime, setStartTime] = useState(null);
   const { score, setScore } = useName();
+  const [questionScore, setQuestionScore] = useState();
+
 
   useEffect(() => {
     // initialize time-counter
@@ -44,10 +48,64 @@ function Input({
     setAnswer(event.target.value);
   };
 
+  // Removes accents and special characters
+  const simplify = (string) => {
+    const simplifiedString = string
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/([^\w]+|\s+)/g, "");
+    return simplifiedString;
+  };
+
+  // Sets error percentage depending on title length
+  const getErrorMargin = (title) => {
+    if (title.length > 40) {
+      return 0.75;
+    }
+    if (title.length > 30) {
+      return 0.7;
+    }
+    if (title.length > 20) {
+      return 0.55;
+    }
+    return title.length / 65;
+  };
+
+  const compare = (expected, expectedOriginal, input) => {
+    // Removes accents and special characters
+    const titleFr = simplify(expected);
+    const titleOg = simplify(expectedOriginal);
+    const userInput = simplify(input);
+
+    if (titleFr !== titleOg) {
+      // Sets error percentage depending on title length
+      const percent = getErrorMargin(titleOg);
+      const max = Math.max(titleOg.length, userInput.length);
+      // Test if original title matches user imput
+      if (levenshtein(titleOg, userInput) / max <= percent) {
+        return true;
+      }
+    }
+    // Sets error percentage depending on title length
+    const percent = getErrorMargin(titleFr);
+    const max = Math.max(titleFr.length, userInput.length);
+    // Test if French title matches user imput
+    if (levenshtein(titleFr, userInput) / max <= percent) {
+      return true;
+    }
+    return false;
+  };
+
   // Checks if the answer is right or wrong
   const handleClick = () => {
     if (answer !== "") {
-      if (movieTitle.toLowerCase() === answer.toLowerCase()) {
+      if (
+        compare(
+          movieTitle.toLowerCase(),
+          movieOriginalTitle.toLowerCase(),
+          answer.toLowerCase()
+        )
+      ) {
         setAnswerDisplay(true);
         setIsDisabled(true);
         // calculate time response and time bonus
@@ -55,6 +113,7 @@ function Input({
         const maxScore = 10;
         const timeBonus = maxScore - Math.floor(timeTaken / 4000);
         // attribute points if right + bonus points for quick answer
+        setQuestionScore(10 + timeBonus);
         setScore(score + 10 + timeBonus);
         // Changes game state if game is over
         if (questionIndex === 10) {
@@ -108,7 +167,7 @@ function Input({
             : "answer__display"
         }
       >
-        Bravo, + {score} points !
+        Bravo, + {questionScore} points !
       </p>
       <p
         className={
@@ -125,6 +184,7 @@ function Input({
 
 Input.propTypes = {
   movieTitle: PropTypes.string.isRequired,
+  movieOriginalTitle: PropTypes.string.isRequired,
   setGameOver: PropTypes.func.isRequired,
   questionIndex: PropTypes.number.isRequired,
   questionOver: PropTypes.bool.isRequired,
