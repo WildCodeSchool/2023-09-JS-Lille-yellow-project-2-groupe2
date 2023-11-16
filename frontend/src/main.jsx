@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { GameProvider } from "./components/GameContext";
 
 import App from "./App";
 import AboutUs from "./components/AboutUs/AboutUs";
@@ -31,6 +31,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GameProvider>
+      <RouterProvider router={router} />
+    </GameProvider>
   </React.StrictMode>
 );

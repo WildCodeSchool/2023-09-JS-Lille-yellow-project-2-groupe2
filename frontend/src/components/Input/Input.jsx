@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import levenshtein from "js-levenshtein";
+import PropTypes from "prop-types";
+import useName from "../GameContext";
+
 import "./input.css";
 
 function Input({
   movieTitle,
   movieOriginalTitle,
   setGameOver,
-  score,
-  setScore,
   questionIndex,
   questionOver,
   setQuestionOver,
@@ -18,6 +18,7 @@ function Input({
   const [isDisabled, setIsDisabled] = useState(false);
   const [startTime, setStartTime] = useState(null);
   const [questionScore, setQuestionScore] = useState();
+  const { score, setScore } = useName();
 
   useEffect(() => {
     // initialize time-counter
@@ -185,8 +186,6 @@ Input.propTypes = {
   movieTitle: PropTypes.string.isRequired,
   movieOriginalTitle: PropTypes.string.isRequired,
   setGameOver: PropTypes.func.isRequired,
-  score: PropTypes.number.isRequired,
-  setScore: PropTypes.func.isRequired,
   questionIndex: PropTypes.number.isRequired,
   questionOver: PropTypes.bool.isRequired,
   setQuestionOver: PropTypes.func.isRequired,
