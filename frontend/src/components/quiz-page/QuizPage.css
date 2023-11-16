@@ -28,6 +28,10 @@
     background-color: unset;
   }
 
+  .clues--hide {
+    animation: unset;
+  }
+
   .poster__img {
     grid-area: 1 / 1 / 4 / 2;
     width: auto;
