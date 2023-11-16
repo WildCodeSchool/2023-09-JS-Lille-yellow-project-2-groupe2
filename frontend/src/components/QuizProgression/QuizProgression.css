@@ -1,0 +1,12 @@
+.progression_text {
+  text-align: center;
+  font-family: var(--second-font);
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: var(--button-color);
+  border: var(--button-border);
+  border-radius: 16px;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
