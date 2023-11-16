@@ -57,22 +57,22 @@ function RankingPage() {
           </thead>
           <tbody className="ranking_lasts_container">
             <section className="three_firsts_bloc_responsive">
-              {sortedRanking.map((rankingOne, index) => (
+              {sortedRanking.map((element, index) => (
                 <tr
                   className={index < 3 ? "ranking_line_first" : "no_display"}
-                  key={rankingOne.id}
+                  key={element.id}
                 >
                   <td className="last_rank">{index + 1}</td>
-                  <td className="last_name">{rankingOne.name}</td>
+                  <td className="last_name">{element.name}</td>
                   <td className="last_image">
                     <img
-                      src={rankingOne.imageurl}
+                      src={element.imageurl}
                       className={index < 3 ? "ranking_lasts_avatars" : ""}
                       alt="avatar"
                     />
                   </td>
                   <td className="responsive_three_firsts_score">
-                    {ranking.points}
+                    {element.points}
                   </td>
                 </tr>
               ))}

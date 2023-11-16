@@ -11,13 +11,13 @@ export function GameProvider({ children }) {
       id: 1,
       imageurl: "./src/assets/avatars/avatar1.png",
       name: "Rayane",
-      points: "324",
+      points: "181",
     },
     {
       id: 2,
       imageurl: "./src/assets/avatars/avatar4.png",
       name: "Lucas",
-      points: "272",
+      points: "162",
     },
     {
       id: 3,
@@ -29,19 +29,19 @@ export function GameProvider({ children }) {
       id: 4,
       imageurl: "./src/assets/avatars/avatar2.png",
       name: "Julien",
-      points: "150",
+      points: "120",
     },
     {
       id: 5,
       imageurl: "./src/assets/avatars/avatar2.png",
       name: "Sébastien",
-      points: "122",
+      points: "98",
     },
     {
       id: 6,
       imageurl: "./src/assets/avatars/avatar1.png",
       name: "Toto",
-      points: "111",
+      points: "46",
     },
   ]);
 
