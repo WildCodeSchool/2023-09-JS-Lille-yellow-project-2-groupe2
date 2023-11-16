@@ -26,23 +26,21 @@ function RankingPage() {
         </table>
         <section className="ranking_container">
           <section className="three_firsts_bloc three_firsts_bloc_responsive">
-            {sortedRanking.map((rankingOne, index) => (
+            {sortedRanking.map((element, index) => (
               <section
                 className={index < 3 ? "three_firsts_cards" : "no_display"}
-                key={rankingOne.id}
+                key={element.id}
               >
                 <h3 className="three_firsts_name">{index + 1}</h3>
-                <h2 className="three_firsts_name">{rankingOne.name}</h2>
+                <h2 className="three_firsts_name">{element.name}</h2>
                 <img
-                  src={rankingOne.imageurl}
+                  src={element.imageurl}
                   className={index < 3 ? "ranking_three_first_avatars" : ""}
                   alt="avatar"
                 />
-                <h3 className="three_firsts_score">
-                  Score : {rankingOne.points}
-                </h3>
+                <h3 className="three_firsts_score">Score : {element.points}</h3>
                 <h3 className="responsive_three_firsts_score">
-                  {rankingOne.points}
+                  {element.points}
                 </h3>
               </section>
             ))}

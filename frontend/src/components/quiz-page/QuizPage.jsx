@@ -4,7 +4,6 @@ import Poster from "../poster/Poster";
 import Clues from "../Clues/Clues";
 import Input from "../Input/Input";
 import ResultPopUp from "../ResultPopUp/ResultPopUp";
-import RankingPage from "../RankingPage/RankingPage";
 
 // Movie list that will be replaced by API calls
 import "./QuizPage.css";
@@ -123,7 +122,6 @@ function QuizPage() {
           questionOver={questionOver}
           setQuestionOver={setQuestionOver}
         />
-        <RankingPage gameOver={gameOver} />
       </section>
     )
   );
