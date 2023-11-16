@@ -14,7 +14,29 @@ function Input({
   const [answerDisplay, setAnswerDisplay] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [startTime, setStartTime] = useState(null);
-  const { score, setScore } = useName();
+  const { score, setScore, setRanking, ranking, rankingName } = useName();
+
+  const avatars = [
+    "./src/assets/avatars/avatar1.png",
+    "./src/assets/avatars/avatar2.png",
+    "./src/assets/avatars/avatar4.png",
+  ];
+
+  const getRandomAvatar = () => {
+    const randomAvatar = Math.floor(Math.random() * avatars.length);
+    return avatars[randomAvatar];
+  };
+
+  const updateRanking = (playerInfo) => {
+    setRanking([...ranking, playerInfo]);
+  };
+
+  const playerInfo = {
+    id: ranking.length + 1,
+    imageurl: getRandomAvatar(),
+    name: rankingName,
+    points: score,
+  };
 
   useEffect(() => {
     // initialize time-counter
@@ -59,6 +81,8 @@ function Input({
         // Changes game state if game is over
         if (questionIndex === 10) {
           setGameOver(true);
+          updateRanking(playerInfo);
+          setScore(0);
         }
         setQuestionOver(true);
       } else {

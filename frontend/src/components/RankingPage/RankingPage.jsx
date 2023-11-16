@@ -4,30 +4,7 @@ import "../Navbar/Navbar.css";
 import BackBtn from "../BackBtn/BackBtn";
 
 function RankingPage() {
-  const { score, rankingName, ranking, setRanking } = useName();
-  const avatars = [
-    "./src/assets/avatars/avatar1.png",
-    "./src/assets/avatars/avatar2.png",
-    "./src/assets/avatars/avatar4.png",
-  ];
-
-  const getRandomAvatar = () => {
-    const randomAvatar = Math.floor(Math.random() * avatars.length);
-    return avatars[randomAvatar];
-  };
-
-  const updateRanking = (playerInfo) => {
-    setRanking([...ranking, playerInfo]);
-  };
-
-  const playerInfo = {
-    id: ranking.length + 1,
-    imageurl: getRandomAvatar(),
-    name: rankingName,
-    points: score,
-  };
-
-  updateRanking(playerInfo);
+  const { ranking } = useName();
 
   const sortedRanking = [...ranking];
   sortedRanking.sort((x, y) => y.points - x.points);
