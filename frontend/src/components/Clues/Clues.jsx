@@ -6,10 +6,10 @@ function Clues({ movieDate, movieDirector, movieGenres, movieCast }) {
 
   return (
     <section className="clues">
-      <p className="date-clue">{movieYear}</p>
-      <p className="producer-clue">{movieDirector}</p>
-      <p className="genre-clue">{movieGenres}</p>
-      <p className="casting-clue">{movieCast}</p>
+      <p className="clue date-clue">{movieYear}</p>
+      <p className="clue producer-clue">{movieDirector}</p>
+      <p className="clue genre-clue">{movieGenres}</p>
+      <p className="clue casting-clue">{movieCast}</p>
     </section>
   );
 }
