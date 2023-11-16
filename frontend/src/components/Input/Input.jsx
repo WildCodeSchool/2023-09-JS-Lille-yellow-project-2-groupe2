@@ -5,6 +5,7 @@ import "./input.css";
 
 function Input({
   movieTitle,
+  movieOriginalTitle,
   setGameOver,
   score,
   setScore,
@@ -46,38 +47,64 @@ function Input({
     setAnswer(event.target.value);
   };
 
-  function compare(expected, input) {
-    // Removes accents and special characters
-    const title = expected
+  // Removes accents and special characters
+  const simplify = (string) => {
+    const simplifiedString = string
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/([^\w]+|\s+)/g, "");
-    const userInput = input
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/([^\w]+|\s+)/g, "");
-    const max = Math.max(title.length, userInput.length);
-    let percent;
-    // Sets error percentage depending on title length
+    return simplifiedString;
+  };
+
+  // Sets error percentage depending on title length
+  const getErrorMargin = (title) => {
     if (title.length > 40) {
-      percent = 0.75;
-    } else if (title.length > 30) {
-      percent = 0.7;
-    } else if (title.length > 20) {
-      percent = 0.55;
-    } else {
-      percent = title.length / 65;
+      return 0.75;
     }
-    if (levenshtein(title, userInput) / max <= percent) {
+    if (title.length > 30) {
+      return 0.7;
+    }
+    if (title.length > 20) {
+      return 0.55;
+    }
+    return title.length / 65;
+  };
+
+  const compare = (expected, expectedOriginal, input) => {
+    // Removes accents and special characters
+    const titleFr = simplify(expected);
+    const titleOg = simplify(expectedOriginal);
+    const userInput = simplify(input);
+
+    if (titleFr !== titleOg) {
+      // Sets error percentage depending on title length
+      const percent = getErrorMargin(titleOg);
+      const max = Math.max(titleOg.length, userInput.length);
+      // Test if original title matches user imput
+      if (levenshtein(titleOg, userInput) / max <= percent) {
+        return true;
+      }
+    }
+    // Sets error percentage depending on title length
+    const percent = getErrorMargin(titleFr);
+    const max = Math.max(titleFr.length, userInput.length);
+    // Test if French title matches user imput
+    if (levenshtein(titleFr, userInput) / max <= percent) {
       return true;
     }
     return false;
-  }
+  };
 
   // Checks if the answer is right or wrong
   const handleClick = () => {
     if (answer !== "") {
-      if (compare(movieTitle.toLowerCase(), answer.toLowerCase())) {
+      if (
+        compare(
+          movieTitle.toLowerCase(),
+          movieOriginalTitle.toLowerCase(),
+          answer.toLowerCase()
+        )
+      ) {
         setAnswerDisplay(true);
         setIsDisabled(true);
         // calculate time response and time bonus
@@ -156,6 +183,7 @@ function Input({
 
 Input.propTypes = {
   movieTitle: PropTypes.string.isRequired,
+  movieOriginalTitle: PropTypes.string.isRequired,
   setGameOver: PropTypes.func.isRequired,
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
