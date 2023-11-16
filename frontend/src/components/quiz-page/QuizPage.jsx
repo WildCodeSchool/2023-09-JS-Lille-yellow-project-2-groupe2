@@ -108,6 +108,7 @@ function QuizPage() {
         )}
         <Input
           movieTitle={movie.title}
+          movieOriginalTitle={movie.original_title}
           setGameOver={setGameOver}
           score={score}
           setScore={setScore}
