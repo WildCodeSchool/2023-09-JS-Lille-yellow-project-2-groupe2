@@ -6,7 +6,5 @@
   background: var(--button-color);
   border: var(--button-border);
   border-radius: 16px;
-  padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
 }
