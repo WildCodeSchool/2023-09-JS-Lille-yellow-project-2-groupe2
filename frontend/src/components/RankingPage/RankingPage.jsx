@@ -31,7 +31,9 @@ function RankingPage() {
                 className={index < 3 ? "three_firsts_cards" : "no_display"}
                 key={element.id}
               >
-                <h3 className="three_firsts_name">{index + 1}</h3>
+                <h3 className="three_firsts_name">
+                  {index > 0 ? `${index + 1}ème` : `${index + 1}er`}
+                </h3>
                 <h2 className="three_firsts_name">{element.name}</h2>
                 <img
                   src={element.imageurl}
@@ -62,7 +64,9 @@ function RankingPage() {
                   className={index < 3 ? "ranking_line_first" : "no_display"}
                   key={element.id}
                 >
-                  <td className="last_rank">{index + 1}</td>
+                  <td className="last_rank">
+                    {index > 0 ? `${index + 1}ème` : `${index + 1}er`}
+                  </td>
                   <td className="last_name">{element.name}</td>
                   <td className="last_image">
                     <img
@@ -81,7 +85,9 @@ function RankingPage() {
               (element, index) =>
                 index >= 3 && (
                   <tr key={element.id} className="ranking_line">
-                    <td className="last_rank">{index + 1}</td>
+                    <td className="last_rank">
+                      {index > 0 ? `${index + 1}ème` : `${index + 1}er`}
+                    </td>
                     <td className="last_name">{element.name}</td>
                     <td className="last_image">
                       <img
