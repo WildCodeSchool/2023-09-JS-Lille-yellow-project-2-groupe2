@@ -1,49 +1,36 @@
+import useName from "../GameContext";
 import "./RankingPage.css";
 import "../Navbar/Navbar.css";
 import BackBtn from "../BackBtn/BackBtn";
 
 function RankingPage() {
-  const Ranking = [
-    {
-      imageurl: "./src/assets/avatars/avatar1.png",
-      rank: "1er",
-      name: "Rayane",
-      score: "324",
-    },
-    {
-      imageurl: "./src/assets/avatars/avatar4.png",
-      rank: "2ème",
-      name: "Lucas",
-      score: "272",
-    },
-    {
-      imageurl: "./src/assets/avatars/avatar1.png",
-      rank: "6ème",
-      name: "Yoann",
-      score: "1",
-    },
-    {
-      imageurl: "./src/assets/avatars/avatar2.png",
-      rank: "3ème",
-      name: "Julien",
-      score: "150",
-    },
-    {
-      imageurl: "./src/assets/avatars/avatar2.png",
-      rank: "4ème",
-      name: "Sébastien",
-      score: "122",
-    },
-    {
-      imageurl: "./src/assets/avatars/avatar1.png",
-      rank: "5ème",
-      name: "Toto",
-      score: "111",
-    },
+  const { score, rankingName, ranking, setRanking } = useName();
+  const avatars = [
+    "./src/assets/avatars/avatar1.png",
+    "./src/assets/avatars/avatar2.png",
+    "./src/assets/avatars/avatar4.png",
   ];
 
-  const sortedRanking = [...Ranking];
-  sortedRanking.sort((x, y) => y.score - x.score);
+  const getRandomAvatar = () => {
+    const randomAvatar = Math.floor(Math.random() * avatars.length);
+    return avatars[randomAvatar];
+  };
+
+  const updateRanking = (playerInfo) => {
+    setRanking([...ranking, playerInfo]);
+  };
+
+  const playerInfo = {
+    id: ranking.length + 1,
+    imageurl: getRandomAvatar(),
+    name: rankingName,
+    points: score,
+  };
+
+  updateRanking(playerInfo);
+
+  const sortedRanking = [...ranking];
+  sortedRanking.sort((x, y) => y.points - x.points);
 
   return (
     <main className="ranking_body">
@@ -62,21 +49,23 @@ function RankingPage() {
         </table>
         <section className="ranking_container">
           <section className="three_firsts_bloc three_firsts_bloc_responsive">
-            {sortedRanking.map((ranking, index) => (
+            {sortedRanking.map((rankingOne, index) => (
               <section
                 className={index < 3 ? "three_firsts_cards" : "no_display"}
-                key={ranking.rank}
+                key={rankingOne.id}
               >
-                <h3 className="three_firsts_name">{ranking.rank}</h3>
-                <h2 className="three_firsts_name">{ranking.name}</h2>
+                <h3 className="three_firsts_name">{index + 1}</h3>
+                <h2 className="three_firsts_name">{rankingOne.name}</h2>
                 <img
-                  src={ranking.imageurl}
+                  src={rankingOne.imageurl}
                   className={index < 3 ? "ranking_three_first_avatars" : ""}
                   alt="avatar"
                 />
-                <h3 className="three_firsts_score">Score : {ranking.score}</h3>
+                <h3 className="three_firsts_score">
+                  Score : {rankingOne.points}
+                </h3>
                 <h3 className="responsive_three_firsts_score">
-                  {ranking.score}
+                  {rankingOne.points}
                 </h3>
               </section>
             ))}
@@ -93,22 +82,22 @@ function RankingPage() {
           </thead>
           <tbody className="ranking_lasts_container">
             <section className="three_firsts_bloc_responsive">
-              {sortedRanking.map((ranking, index) => (
+              {sortedRanking.map((rankingOne, index) => (
                 <tr
                   className={index < 3 ? "ranking_line_first" : "no_display"}
-                  key={ranking.rank}
+                  key={rankingOne.id}
                 >
-                  <td className="last_rank">{ranking.rank}</td>
-                  <td className="last_name">{ranking.name}</td>
+                  <td className="last_rank">{index + 1}</td>
+                  <td className="last_name">{rankingOne.name}</td>
                   <td className="last_image">
                     <img
-                      src={ranking.imageurl}
+                      src={rankingOne.imageurl}
                       className={index < 3 ? "ranking_lasts_avatars" : ""}
                       alt="avatar"
                     />
                   </td>
                   <td className="responsive_three_firsts_score">
-                    {ranking.score}
+                    {ranking.points}
                   </td>
                 </tr>
               ))}
@@ -116,8 +105,8 @@ function RankingPage() {
             {sortedRanking.map(
               (element, index) =>
                 index >= 3 && (
-                  <tr key={element.rank} className="ranking_line">
-                    <td className="last_rank">{element.rank}</td>
+                  <tr key={element.id} className="ranking_line">
+                    <td className="last_rank">{index + 1}</td>
                     <td className="last_name">{element.name}</td>
                     <td className="last_image">
                       <img
@@ -126,7 +115,7 @@ function RankingPage() {
                         alt="avatar"
                       />
                     </td>
-                    <td className="last_score">{element.score}</td>
+                    <td className="last_score">{element.points}</td>
                   </tr>
                 )
             )}

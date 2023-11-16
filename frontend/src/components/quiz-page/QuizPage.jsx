@@ -127,7 +127,7 @@ function QuizPage() {
           questionOver={questionOver}
           setQuestionOver={setQuestionOver}
         />
-        <RankingPage />
+        <RankingPage gameOver={gameOver} />
       </section>
     )
   );

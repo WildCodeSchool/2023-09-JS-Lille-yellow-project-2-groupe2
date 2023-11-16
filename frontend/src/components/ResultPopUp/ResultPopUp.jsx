@@ -4,7 +4,7 @@ import useName from "../GameContext";
 import "./ResultPopUp.css";
 
 function ResultPopUp({ questionIndex, setQuestionIndex, questionOver }) {
-  const { score } = useName();
+  const { score } = useName(0);
   const handleClick = () => {
     setQuestionIndex(questionIndex + 1);
   };
