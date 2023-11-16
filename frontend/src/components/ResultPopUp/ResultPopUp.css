@@ -12,7 +12,7 @@
   font-family: var(--second-font);
   border: var(--button-border);
   opacity: 0;
-  animation: 1s forwards 4s fadeIn;
+  animation: 1s forwards 3s fadeIn;
 }
 
 .popUp__title {

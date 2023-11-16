@@ -12,10 +12,12 @@ function Clues({
 
   return (
     <section className={questionOver ? "clues clues--hide" : "clues"}>
-      <p className="clue date-clue">{movieYear}</p>
-      <p className="clue producer-clue">{movieDirector}</p>
-      <p className="clue genre-clue">{movieGenres}</p>
-      <p className="clue casting-clue">{movieCast}</p>
+      <p className={questionOver ? "clue" : "clue date-clue"}>{movieYear}</p>
+      <p className={questionOver ? "clue" : "clue producer-clue"}>
+        {movieDirector}
+      </p>
+      <p className={questionOver ? "clue" : "clue genre-clue"}>{movieGenres}</p>
+      <p className={questionOver ? "clue" : "clue casting-clue"}>{movieCast}</p>
     </section>
   );
 }
