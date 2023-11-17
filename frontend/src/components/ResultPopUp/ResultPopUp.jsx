@@ -1,10 +1,39 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import useName from "../GameContext";
 import "./ResultPopUp.css";
 
-function ResultPopUp({ score, questionIndex, setQuestionIndex, questionOver }) {
+function ResultPopUp({ questionIndex, setQuestionIndex, questionOver }) {
   const handleClick = () => {
     setQuestionIndex(questionIndex + 1);
+  };
+  const { score, setScore, setRanking, ranking, rankingName } = useName();
+
+  const avatars = [
+    "./src/assets/avatars/avatar1.png",
+    "./src/assets/avatars/avatar2.png",
+    "./src/assets/avatars/avatar4.png",
+  ];
+
+  const getRandomAvatar = () => {
+    const randomAvatar = Math.floor(Math.random() * avatars.length);
+    return avatars[randomAvatar];
+  };
+
+  const updateRanking = (playerInfo) => {
+    setRanking([...ranking, playerInfo]);
+  };
+
+  const playerInfo = {
+    id: ranking.length + 1,
+    imageurl: getRandomAvatar(),
+    name: rankingName,
+    points: score,
+  };
+
+  const handleClick1 = () => {
+    updateRanking(playerInfo);
+    setScore(0);
   };
 
   return (
@@ -28,12 +57,14 @@ function ResultPopUp({ score, questionIndex, setQuestionIndex, questionOver }) {
               <Link
                 className="popUp__button popUp__button--border-radius-right"
                 to="/"
+                onClick={handleClick1}
               >
                 Menu
               </Link>
               <Link
                 className="popUp__button popUp__button--border-radius-left"
                 to="/ranking"
+                onClick={handleClick1}
               >
                 Classement
               </Link>
@@ -46,7 +77,6 @@ function ResultPopUp({ score, questionIndex, setQuestionIndex, questionOver }) {
 }
 
 ResultPopUp.propTypes = {
-  score: PropTypes.number.isRequired,
   questionIndex: PropTypes.number.isRequired,
   setQuestionIndex: PropTypes.func.isRequired,
   questionOver: PropTypes.bool.isRequired,

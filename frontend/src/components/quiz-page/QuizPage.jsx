@@ -4,6 +4,7 @@ import Poster from "../poster/Poster";
 import Clues from "../Clues/Clues";
 import Input from "../Input/Input";
 import ResultPopUp from "../ResultPopUp/ResultPopUp";
+
 // Movie list that will be replaced by API calls
 import "./QuizPage.css";
 
@@ -15,7 +16,6 @@ function QuizPage() {
   // Game state, true when the game is over
   const [gameOver, setGameOver] = useState(false);
   // User score
-  const [score, setScore] = useState(0);
   const [movie, setMovie] = useState(null);
   const [movieCast, setMovieCast] = useState(null);
   const [movieDirector, setMovieDirector] = useState(null);
@@ -111,15 +111,12 @@ function QuizPage() {
           movieTitle={movie.title}
           movieOriginalTitle={movie.original_title}
           setGameOver={setGameOver}
-          score={score}
-          setScore={setScore}
           questionIndex={questionIndex}
           questionOver={questionOver}
           setQuestionOver={setQuestionOver}
         />
         <ResultPopUp
           gameOver={gameOver}
-          score={score}
           questionIndex={questionIndex}
           setQuestionIndex={setQuestionIndex}
           questionOver={questionOver}
