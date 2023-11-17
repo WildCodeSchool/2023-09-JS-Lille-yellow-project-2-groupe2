@@ -59,16 +59,16 @@ function Input({
 
   // Sets error percentage depending on title length
   const getErrorMargin = (title) => {
-    if (title.length > 40) {
+    if (title.length > 30) {
       return 0.75;
     }
-    if (title.length > 30) {
-      return 0.7;
-    }
     if (title.length > 20) {
-      return 0.55;
+      return 0.65;
     }
-    return title.length / 65;
+    if (title.length > 10) {
+      return 0.45;
+    }
+    return title.length / 60;
   };
 
   const compare = (expected, expectedOriginal, input) => {

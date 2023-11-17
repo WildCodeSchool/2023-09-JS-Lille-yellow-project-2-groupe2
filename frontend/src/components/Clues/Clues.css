@@ -26,7 +26,7 @@
   opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
-  animation-delay: 10s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 }
 
@@ -42,7 +42,7 @@
   opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
-  animation-delay: 18s;
+  animation-delay: 13s;
   animation-fill-mode: forwards;
 }
 
@@ -50,7 +50,7 @@
   opacity: var(--opacity-none);
   animation-name: fadeIn;
   animation-duration: 4s;
-  animation-delay: 25s;
+  animation-delay: 21s;
   animation-fill-mode: forwards;
 }
 
